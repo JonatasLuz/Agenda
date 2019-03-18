@@ -7,11 +7,46 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
+    
+    let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //Create
+        let pessoa = Pessoa(context: contexto)
+        pessoa.nome = "Gandalf The Gray"
+        
+        do{
+            try contexto.save()
+            
+        }catch{
+            print("Erro no Cadastro: \(error)")
+        }
+        
+        
+        var pessoas : [Pessoa] = []
+        
+        let requisicao : NSFetchRequest<Pessoa> = Pessoa.fetchRequest()
+        
+        do{
+            try pessoas =  contexto.fetch(requisicao)
+        }catch{
+            print("Erro na leitura: \(error)")
+        }
+        
+        print(pessoas.count)
+        
+        for pessoinha in pessoas{
+            print(pessoinha.nome)
+        }
+        
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

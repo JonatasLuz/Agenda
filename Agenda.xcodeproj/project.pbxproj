@@ -13,6 +13,7 @@
 		57702443223C75E800F43C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57702442223C75E800F43C06 /* Assets.xcassets */; };
 		57702446223C75E800F43C06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57702444223C75E800F43C06 /* LaunchScreen.storyboard */; };
 		5770244F223C763800F43C06 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770244E223C763800F43C06 /* TableViewController.swift */; };
+		57702452223C7EAF00F43C06 /* TableModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57702451223C7EAF00F43C06 /* TableModelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		57702445223C75E800F43C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57702447223C75E800F43C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5770244E223C763800F43C06 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		57702451223C7EAF00F43C06 /* TableModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		57702437223C75E700F43C06 /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
+				57702450223C7E9000F43C06 /* ModelView */,
 				5770244D223C762100F43C06 /* Controller */,
 				57702438223C75E700F43C06 /* AppDelegate.swift */,
 				5770243C223C75E700F43C06 /* Main.storyboard */,
@@ -73,6 +76,14 @@
 				5770244E223C763800F43C06 /* TableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		57702450223C7E9000F43C06 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				57702451223C7EAF00F43C06 /* TableModelView.swift */,
+			);
+			path = ModelView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 			files = (
 				57702441223C75E700F43C06 /* Agenda.xcdatamodeld in Sources */,
 				5770244F223C763800F43C06 /* TableViewController.swift in Sources */,
+				57702452223C7EAF00F43C06 /* TableModelView.swift in Sources */,
 				57702439223C75E700F43C06 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

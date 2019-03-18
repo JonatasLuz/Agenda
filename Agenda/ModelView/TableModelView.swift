@@ -9,8 +9,13 @@
 import Foundation
 
 
-class {
+class tableModelView{
     
+    let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    init(){
+        
+    }
     
     
 }
