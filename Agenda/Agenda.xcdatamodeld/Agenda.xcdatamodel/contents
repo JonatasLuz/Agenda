@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Fone" representedClassName="Fone" syncable="YES" codeGenerationType="class">
+        <attribute name="ddd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="telefone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pessoa" inverseName="relationship" inverseEntity="Pessoa" syncable="YES"/>
+    </entity>
     <entity name="Pessoa" representedClassName="Pessoa" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fone" inverseName="relationship" inverseEntity="Fone" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Pessoa" positionX="-9" positionY="36" width="128" height="75"/>
+        <element name="Pessoa" positionX="-467.08984375" positionY="36.74609375" width="128" height="88"/>
+        <element name="Fone" positionX="-248.9140625" positionY="42.4296875" width="128" height="88"/>
     </elements>
 </model>

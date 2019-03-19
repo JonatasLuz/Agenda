@@ -24,6 +24,20 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SJI-Ta-sdO" id="cPr-lH-wbc">
                                     <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pessoa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uN3-04-FPg">
+                                            <rect key="frame" x="16" y="11" width="311" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uN3-04-FPg" firstAttribute="leading" secondItem="cPr-lH-wbc" secondAttribute="leadingMargin" id="8VR-SW-HKb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uN3-04-FPg" secondAttribute="bottom" id="LuF-KV-HEv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uN3-04-FPg" secondAttribute="trailing" id="Slh-Nu-4Nn"/>
+                                        <constraint firstItem="uN3-04-FPg" firstAttribute="top" secondItem="cPr-lH-wbc" secondAttribute="topMargin" id="mYE-W5-GNr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

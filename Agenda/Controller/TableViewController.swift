@@ -11,43 +11,20 @@ import CoreData
 
 class TableViewController: UITableViewController {
     
-    let contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    var agenda : TableModelView!
+    var pessoas : [Pessoa]!
+    var fone: [Fone]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //Create
-        let pessoa = Pessoa(context: contexto)
-        pessoa.nome = "Gandalf The Gray"
-        
-        do{
-            try contexto.save()
-            
-        }catch{
-            print("Erro no Cadastro: \(error)")
-        }
-        
-        
-        var pessoas : [Pessoa] = []
-        
-        let requisicao : NSFetchRequest<Pessoa> = Pessoa.fetchRequest()
-        
-        do{
-            try pessoas =  contexto.fetch(requisicao)
-        }catch{
-            print("Erro na leitura: \(error)")
-        }
-        
-        print(pessoas.count)
-        
-        for pessoinha in pessoas{
-            print(pessoinha.nome)
-        }
-        
-        
+        agenda = TableModelView()
+        pessoas = agenda.getPessoas()
+        fone = agenda.getFones()
+        print(fone[0].relationship?.nome)
+  
         
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -64,15 +41,16 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return pessoas.count
     }
-
-
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        if let labelNome = cell.viewWithTag(1000) as? UILabel{
+            labelNome.text = pessoas?[indexPath.row].nome
+        }
         // Configure the cell...
-
         return cell
     }
 
