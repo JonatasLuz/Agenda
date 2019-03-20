@@ -15,21 +15,12 @@ class TableViewController: UITableViewController {
     var pessoas : [Pessoa]!
     var fone: [Fone]!
     
+    @IBOutlet weak var adicionaPessoaButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         agenda = TableModelView()
         pessoas = agenda.getPessoas()
         fone = agenda.getFones()
-        print(fone[0].relationship?.nome)
-  
-        
-
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -54,7 +45,12 @@ class TableViewController: UITableViewController {
         return cell
     }
 
-
+    @IBAction func adicionaPessoaAction(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let AdicionarPessoaViewController = storyBoard.instantiateViewController(withIdentifier: "IncluirPessoa") as! AdicionarPessoaViewController
+        self.present(AdicionarPessoaViewController, animated: true, completion: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

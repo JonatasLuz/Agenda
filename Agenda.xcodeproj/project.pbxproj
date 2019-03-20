@@ -14,6 +14,7 @@
 		57702446223C75E800F43C06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57702444223C75E800F43C06 /* LaunchScreen.storyboard */; };
 		5770244F223C763800F43C06 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770244E223C763800F43C06 /* TableViewController.swift */; };
 		57702452223C7EAF00F43C06 /* TableModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57702451223C7EAF00F43C06 /* TableModelView.swift */; };
+		57E330B62242DAF700686269 /* AdicionarPessoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E330B52242DAF700686269 /* AdicionarPessoaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		57702447223C75E800F43C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5770244E223C763800F43C06 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		57702451223C7EAF00F43C06 /* TableModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModelView.swift; sourceTree = "<group>"; };
+		57E330B52242DAF700686269 /* AdicionarPessoaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarPessoaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				5770244E223C763800F43C06 /* TableViewController.swift */,
+				57E330B52242DAF700686269 /* AdicionarPessoaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				57702441223C75E700F43C06 /* Agenda.xcdatamodeld in Sources */,
 				5770244F223C763800F43C06 /* TableViewController.swift in Sources */,
+				57E330B62242DAF700686269 /* AdicionarPessoaViewController.swift in Sources */,
 				57702452223C7EAF00F43C06 /* TableModelView.swift in Sources */,
 				57702439223C75E700F43C06 /* AppDelegate.swift in Sources */,
 			);
