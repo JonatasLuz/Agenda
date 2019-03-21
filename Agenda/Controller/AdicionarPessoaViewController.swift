@@ -12,6 +12,7 @@ class AdicionarPessoaViewController: UIViewController {
     
     
 
+    @IBOutlet weak var adicionaImagem: UIImageView!
     @IBOutlet weak var voltarButton: UIBarButtonItem!
     @IBOutlet weak var cadastrarButton: UIBarButtonItem!
     
@@ -35,6 +36,10 @@ class AdicionarPessoaViewController: UIViewController {
         self.present(TableViewController, animated: true, completion: nil)
     }
     
+    
+    @IBAction func adicionaImagem(_ sender: UIImageView){
+        retornaMenu()
+    }
     
     @IBAction func voltarAction(_ sender: UIButton) {
         retornaMenu()
