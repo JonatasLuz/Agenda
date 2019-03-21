@@ -53,6 +53,9 @@
                                         <constraint firstItem="uN3-04-FPg" firstAttribute="top" secondItem="cPr-lH-wbc" secondAttribute="topMargin" id="mYE-W5-GNr"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EMi-Io-lLa" kind="show" id="KL3-78-CRS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -67,6 +70,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecC-fR-Pk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1615" y="274"/>
+        </scene>
+        <!--Visualizar Contato Controller Scene-->
+        <scene sceneID="qBI-QD-Hqi">
+            <objects>
+                <viewController title="Visualizar Contato Controller Scene" id="EMi-Io-lLa" customClass="VisualizaContatoViewController" customModule="Agenda" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kLG-zA-S4o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdL-Gc-feI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Contato" id="10c-jD-mwB"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4D5-Eq-Ujo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GjL-lN-6G9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-831" y="274"/>
         </scene>
         <!--Adicionar Pessoa View Controller-->
         <scene sceneID="jKJ-Fr-LK1">
@@ -180,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtD-pl-QnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-935.20000000000005" y="273.91304347826087"/>
+            <point key="canvasLocation" x="-1615" y="-420"/>
         </scene>
     </scenes>
 </document>

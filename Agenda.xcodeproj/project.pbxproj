@@ -15,6 +15,7 @@
 		5770244F223C763800F43C06 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770244E223C763800F43C06 /* TableViewController.swift */; };
 		57702452223C7EAF00F43C06 /* TableModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57702451223C7EAF00F43C06 /* TableModelView.swift */; };
 		57E330B62242DAF700686269 /* AdicionarPessoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E330B52242DAF700686269 /* AdicionarPessoaViewController.swift */; };
+		57E330BE224317CB00686269 /* VisualizaContatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E330BD224317CB00686269 /* VisualizaContatoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5770244E223C763800F43C06 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		57702451223C7EAF00F43C06 /* TableModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModelView.swift; sourceTree = "<group>"; };
 		57E330B52242DAF700686269 /* AdicionarPessoaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarPessoaViewController.swift; sourceTree = "<group>"; };
+		57E330BD224317CB00686269 /* VisualizaContatoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizaContatoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				5770244E223C763800F43C06 /* TableViewController.swift */,
 				57E330B52242DAF700686269 /* AdicionarPessoaViewController.swift */,
+				57E330BD224317CB00686269 /* VisualizaContatoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				57702441223C75E700F43C06 /* Agenda.xcdatamodeld in Sources */,
 				5770244F223C763800F43C06 /* TableViewController.swift in Sources */,
+				57E330BE224317CB00686269 /* VisualizaContatoViewController.swift in Sources */,
 				57E330B62242DAF700686269 /* AdicionarPessoaViewController.swift in Sources */,
 				57702452223C7EAF00F43C06 /* TableModelView.swift in Sources */,
 				57702439223C75E700F43C06 /* AppDelegate.swift in Sources */,

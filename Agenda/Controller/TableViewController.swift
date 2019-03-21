@@ -51,13 +51,19 @@ class TableViewController: UITableViewController {
         self.present(AdicionarPessoaViewController, animated: true, completion: nil)
     }
     
-    /*
+   
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let proxima = segue.destination as! VisualizaContatoViewController
+       proxima.Celula = tableView.indexPathForSelectedRow?.row
+    }
+
 
     /*
     // Override to support editing the table view.
