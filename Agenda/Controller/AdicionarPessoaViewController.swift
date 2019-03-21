@@ -12,7 +12,7 @@ class AdicionarPessoaViewController: UIViewController {
     
     
 
-    @IBOutlet weak var adicionaImagem: UIImageView!
+    @IBOutlet weak var adicionaImagemButton: UIButton!
     @IBOutlet weak var voltarButton: UIBarButtonItem!
     @IBOutlet weak var cadastrarButton: UIBarButtonItem!
     
@@ -22,6 +22,8 @@ class AdicionarPessoaViewController: UIViewController {
     @IBOutlet weak var dddTextField: UITextField!
     @IBOutlet weak var telefoneTextField: UITextField!
     
+    
+    var imagemPicker : UIImagePickerController = UIImagePickerController()
     var agenda: TableModelView = TableModelView()
     var pessoa : Pessoa!
     override func viewDidLoad() {
@@ -37,10 +39,14 @@ class AdicionarPessoaViewController: UIViewController {
     }
     
     
-    @IBAction func adicionaImagem(_ sender: UIImageView){
-        retornaMenu()
-    }
+ 
     
+    @IBAction func adicionaImagemAction(_ sender: UIButton) {
+        imagemPicker.sourceType = .camera
+        imagemPicker.allowsEditing = true
+        imagemPicker.delegate = (self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+        present(imagemPicker, animated: true)
+    }
     @IBAction func voltarAction(_ sender: UIButton) {
         retornaMenu()
     }

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="0V4-es-gri">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="92" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Agenda" id="QSv-rW-9sc">
@@ -178,7 +178,7 @@
             <objects>
                 <viewController storyboardIdentifier="IncluirPessoa" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UaZ-rN-LeZ" customClass="AdicionarPessoaViewController" customModule="Agenda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="Adicionar Pessoa" id="zFL-v4-Oog">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYH-Fm-wt6">
@@ -262,19 +262,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDE-Iw-2kF">
                                 <rect key="frame" x="0.0" y="74" width="414" height="150"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contato" translatesAutoresizingMaskIntoConstraints="NO" id="4uf-21-Avt">
-                                        <rect key="frame" x="107" y="25" width="200" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="ACF-ap-1Z9"/>
-                                            <constraint firstAttribute="width" constant="200" id="zTu-4Y-84Y"/>
-                                        </constraints>
-                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-Ms-Xax">
+                                        <rect key="frame" x="20" y="2" width="374" height="146"/>
+                                        <state key="normal" title="Button" image="contato"/>
+                                        <connections>
+                                            <action selector="adicionaImagemAction:" destination="UaZ-rN-LeZ" eventType="touchUpInside" id="jre-mf-LH3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="4uf-21-Avt" firstAttribute="top" secondItem="DDE-Iw-2kF" secondAttribute="top" constant="25" id="Idh-If-hYZ"/>
-                                    <constraint firstItem="4uf-21-Avt" firstAttribute="centerX" secondItem="DDE-Iw-2kF" secondAttribute="centerX" id="JAm-Rp-8BG"/>
-                                    <constraint firstAttribute="bottom" secondItem="4uf-21-Avt" secondAttribute="bottom" constant="25" id="gZh-LO-Gqv"/>
+                                    <constraint firstAttribute="bottom" secondItem="M7o-Ms-Xax" secondAttribute="bottom" constant="2" id="BaI-ZM-Evv"/>
+                                    <constraint firstAttribute="trailing" secondItem="M7o-Ms-Xax" secondAttribute="trailing" constant="20" symbolic="YES" id="KJ4-o5-EzO"/>
+                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="top" secondItem="DDE-Iw-2kF" secondAttribute="top" constant="2" id="pws-X2-a95"/>
+                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="leading" secondItem="DDE-Iw-2kF" secondAttribute="leading" constant="20" symbolic="YES" id="udD-Np-KuW"/>
                                     <constraint firstAttribute="height" constant="150" id="v4q-Sz-iM7" userLabel="height = 200"/>
                                 </constraints>
                             </view>
@@ -295,7 +296,7 @@
                         <viewLayoutGuide key="safeArea" id="ccb-lQ-XtV"/>
                     </view>
                     <connections>
-                        <outlet property="adicionaImagem" destination="4uf-21-Avt" id="DVs-zC-Ogp"/>
+                        <outlet property="adicionaImagemButton" destination="M7o-Ms-Xax" id="W3D-bv-Q5x"/>
                         <outlet property="cadastrarButton" destination="vzw-Wp-kaw" id="6YK-Mu-Aku"/>
                         <outlet property="dddTextField" destination="aNY-N4-mJF" id="wxa-e4-fBF"/>
                         <outlet property="ddiTextField" destination="WVH-04-Agi" id="eR0-CB-OWn"/>
@@ -307,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtD-pl-QnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1615.2" y="-420.53973013493254"/>
+            <point key="canvasLocation" x="-1615.9420289855075" y="-420.6521739130435"/>
         </scene>
     </scenes>
     <resources>
