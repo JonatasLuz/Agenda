@@ -61,7 +61,7 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let proxima = segue.destination as! VisualizaContatoViewController
-       proxima.Celula = tableView.indexPathForSelectedRow?.row
+       proxima.celula = tableView.indexPathForSelectedRow?.row
     }
 
 

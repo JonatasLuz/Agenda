@@ -11,14 +11,39 @@ import UIKit
 class VisualizaContatoViewController: UIViewController {
 
     
-    var Celula : Int!
+    @IBOutlet weak var ddiLabel: UILabel!
+    @IBOutlet weak var dddLabel: UILabel!
+    @IBOutlet weak var telefoneLabel: UILabel!
+    @IBOutlet weak var nomeContatoLabel: UINavigationItem!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var voltarButton: UIBarButtonItem!
+    var celula : Int!
+    var pessoas : [Pessoa]!
+    var telefones : [Fone]!
+    var emails : [Email]!
+    var agenda : TableModelView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Celula)
-        // Do any additional setup after loading the view.
+        
+        agenda = TableModelView()
+        pessoas = agenda.getPessoas()
+        telefones = agenda.getFone(pessoas[celula])
+        emails = agenda.getEmail(pessoas[celula])
+            
+        nomeContatoLabel.title = pessoas[celula].nome
+        telefoneLabel.text = telefones[0].telefone
+        ddiLabel.text = String(telefones[0].ddi)
+        dddLabel.text = String(telefones[0].ddd)
+        emailLabel.text = emails[0].email
+        print (pessoas.count)
     }
     
-
+    @IBAction func voltarAction(_ sender: UIBarButtonItem) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let TableViewController = storyBoard.instantiateViewController(withIdentifier: "Menu") as! TableViewController
+        self.present(TableViewController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

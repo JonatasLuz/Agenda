@@ -17,6 +17,7 @@ class TableModelView{
     
     var pessoas : [Pessoa] = []
     var fones : [Fone] = []
+    var emails : [Email] = []
     
     
     
@@ -68,6 +69,17 @@ class TableModelView{
         return fones
     }
     
+    func getFone(_ pessoa : Pessoa) -> [Fone]{
+        let requisicao : NSFetchRequest<Fone> = Fone.fetchRequest()
+        requisicao.predicate = NSPredicate(format: "pessoa == %@", pessoa)
+        do{
+            try fones = contexto.fetch(requisicao)
+        }catch{
+            print("Erro na leitura de telefone: \(error)")
+        }
+        return fones
+    }
+    
     func cadastraEmail(_ email : String,_ pessoa : Pessoa){
         let emailCadastro = Email(context: contexto)
         emailCadastro.email = email
@@ -77,6 +89,17 @@ class TableModelView{
         }catch{
             print("Erro no Cadastro de Email: \(error)")
         }
+    }
+    
+    func getEmail(_ pessoa : Pessoa) -> [Email]{
+        let requisicao : NSFetchRequest<Email> = Email.fetchRequest()
+        requisicao.predicate = NSPredicate(format: "pessoa == %@", pessoa)
+        do{
+            try emails = contexto.fetch(requisicao)
+        }catch{
+            print("Erro na leitura de email: \(error)")
+        }
+        return emails
     }
     
     init(){

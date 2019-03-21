@@ -37,9 +37,7 @@ class AdicionarPessoaViewController: UIViewController {
     
     
     @IBAction func voltarAction(_ sender: UIButton) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let TableViewController = storyBoard.instantiateViewController(withIdentifier: "Menu") as! TableViewController
-        self.present(TableViewController, animated: true, completion: nil)
+        retornaMenu()
     }
     @IBAction func cadastrarAction(_ sender: UIButton) {
         pessoa = agenda.cadastraPessoa(nomeTextField.text!)
