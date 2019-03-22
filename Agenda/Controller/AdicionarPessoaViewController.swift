@@ -21,15 +21,17 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     @IBOutlet weak var ddiTextField: UITextField!
     @IBOutlet weak var dddTextField: UITextField!
     @IBOutlet weak var telefoneTextField: UITextField!
+
     
     
     var imagePicker = UIImagePickerController()
     var agenda: TableModelView = TableModelView()
     var pessoa : Pessoa!
+    var pessoas : [Pessoa]!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
     
     func retornaMenu(){
@@ -38,19 +40,32 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
         self.present(TableViewController, animated: true, completion: nil)
     }
     
+    
     func acessaGaleria()
     {
+        imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         imagePicker.modalPresentationStyle = .popover
+        imagePicker.allowsEditing = true
         self.present(imagePicker, animated: true, completion: nil)
     }
     
- 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let imagemSelectionada : UIImage!
+        if let imagemEditada = info[.editedImage] as? UIImage{
+            imagemSelectionada = imagemEditada
+            adicionaImagemButton.setImage(imagemSelectionada, for: [])
+            picker.dismiss(animated: true, completion: nil)
+        }
+    }
+
     
     @IBAction func adicionaImagemAction(_ sender: UIButton) {
-        let alerta = UIAlertController()
-        alerta.addAction(UIAlertAction(title: "O aplicativo irá acessar as suas fotos", style: .default, handler: {_ in self.acessaGaleria()}))
+        
+        let alerta = UIAlertController(title: "Agenda", message: "O aplicativo irá acessar as suas fotos", preferredStyle: .alert)
+        alerta.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in self.acessaGaleria()}))
+        alerta.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { _ in }))
         self.present(alerta, animated: true)
     }
     @IBAction func voltarAction(_ sender: UIButton) {

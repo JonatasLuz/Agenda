@@ -16,8 +16,8 @@
         <relationship name="fone" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fone" inverseName="pessoa" inverseEntity="Fone" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Fone" positionX="-248.9140625" positionY="42.4296875" width="128" height="103"/>
-        <element name="Pessoa" positionX="7.25390625" positionY="-127.56640625" width="128" height="88"/>
-        <element name="Email" positionX="-397.140625" positionY="-142.453125" width="128" height="73"/>
+        <element name="Email" positionX="-390.1015625" positionY="-142.44921875" width="128" height="73"/>
+        <element name="Fone" positionX="-362.03515625" positionY="45.96875" width="128" height="103"/>
+        <element name="Pessoa" positionX="-95.68359375" positionY="-143.78515625" width="128" height="88"/>
     </elements>
 </model>

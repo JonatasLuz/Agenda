@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>imagemContato</string>
+	<string>Esse aplicativo utiliza fotos da sua galeria</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Esse aplicativo salva photos na sua galeria de fotos</string>
 	<key>CFBundleDevelopmentRegion</key>
