@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdicionarPessoaViewController: UIViewController {
+class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
 
@@ -23,7 +23,7 @@ class AdicionarPessoaViewController: UIViewController {
     @IBOutlet weak var telefoneTextField: UITextField!
     
     
-    var imagemPicker : UIImagePickerController = UIImagePickerController()
+    var imagePicker = UIImagePickerController()
     var agenda: TableModelView = TableModelView()
     var pessoa : Pessoa!
     override func viewDidLoad() {
@@ -38,14 +38,20 @@ class AdicionarPessoaViewController: UIViewController {
         self.present(TableViewController, animated: true, completion: nil)
     }
     
+    func acessaGaleria()
+    {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        imagePicker.modalPresentationStyle = .popover
+        self.present(imagePicker, animated: true, completion: nil)
+    }
     
  
     
     @IBAction func adicionaImagemAction(_ sender: UIButton) {
-        imagemPicker.sourceType = .camera
-        imagemPicker.allowsEditing = true
-        imagemPicker.delegate = (self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
-        present(imagemPicker, animated: true)
+        let alerta = UIAlertController()
+        alerta.addAction(UIAlertAction(title: "O aplicativo irá acessar as suas fotos", style: .default, handler: {_ in self.acessaGaleria()}))
+        self.present(alerta, animated: true)
     }
     @IBAction func voltarAction(_ sender: UIButton) {
         retornaMenu()
