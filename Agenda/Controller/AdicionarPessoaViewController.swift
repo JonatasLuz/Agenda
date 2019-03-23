@@ -29,9 +29,17 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     var pessoa : Pessoa!
     var pessoas : [Pessoa]!
     override func viewDidLoad() {
+        pessoas = agenda.getPessoas()
+        let imageName = "19" // your image name here
+        let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName).png"
+        let imageUrl: URL = URL(fileURLWithPath: imagePath)
+        guard FileManager.default.fileExists(atPath: imagePath),
+        let imageData: Data = try? Data(contentsOf: imageUrl),let image: UIImage = UIImage(data: imageData) else {
+            return // No image found!
+        }
+        adicionaImagemButton.setImage(image, for: [])
+        
         super.viewDidLoad()
-
-       
     }
     
     func retornaMenu(){
@@ -71,14 +79,40 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     @IBAction func voltarAction(_ sender: UIButton) {
         retornaMenu()
     }
+    
     @IBAction func cadastrarAction(_ sender: UIButton) {
-        pessoa = agenda.cadastraPessoa(nomeTextField.text!)
-        agenda.cadastraEmail(emailTextField.text!, pessoa)
-        agenda.cadastraFone(Int(ddiTextField.text!)!, Int(dddTextField.text!)!, telefoneTextField.text!, pessoa)
+        
+        
+        let imagemNome = String(pessoas.count)
+        
+        if let image = adicionaImagemButton.image(for: []) {
+            if let data = image.pngData() {
+                let filename = getDocumentsDirectory().appendingPathComponent("copy.png")
+                try? data.write(to: filename)
+                print("Entro")
+                print(filename)
+            }
+        }
+        
+        
+        //let imagemPath : String = "(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imagemNome).png"
+        //let imagemURL : URL = URL(fileURLWithPath: imagemPath)
+        //try? adicionaImagemButton.image(for: [])!.pngData()?.write(to: imagemURL)
+        //print(imagemURL)
+        
+        
+        //pessoa = agenda.cadastraPessoa(nomeTextField.text!)
+        //agenda.cadastraEmail(emailTextField.text!, pessoa)
+        //agenda.cadastraFone(Int(ddiTextField.text!)!, Int(dddTextField.text!)!, telefoneTextField.text!, pessoa)
         let alerta = UIAlertController(title: "Agenda", message: "Contato cadastrado com sucesso", preferredStyle: .alert)
         alerta.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {
             _ in self.retornaMenu()
         }))
         self.present(alerta, animated: true, completion: nil)
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 }
