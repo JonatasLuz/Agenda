@@ -35,8 +35,9 @@ class VisualizaContatoViewController: UIViewController {
         ddiLabel.text = String(telefones[0].ddi)
         dddLabel.text = String(telefones[0].ddd)
         emailLabel.text = emails[0].email
-        
-        print (pessoas.count)
+        let imagemURL = pessoas[celula].imagemUrl
+        print(imagemURL)
+        imagemContato.image = load(imagemURL!)
     }
     
     @IBAction func voltarAction(_ sender: UIBarButtonItem) {
@@ -44,6 +45,19 @@ class VisualizaContatoViewController: UIViewController {
         let TableViewController = storyBoard.instantiateViewController(withIdentifier: "Menu") as! TableViewController
         self.present(TableViewController, animated: true, completion: nil)
     }
+    
+    func load(_ url  : URL) -> UIImage?{
+        do{
+            let imageData = try Data(contentsOf: url)
+            return UIImage(data: imageData)
+            
+        }catch{
+            print("Erro: \(error)")
+        }
+        return nil
+    }
+    
+    
     
     /*
     // MARK: - Navigation
@@ -56,3 +70,4 @@ class VisualizaContatoViewController: UIViewController {
     */
 
 }
+
