@@ -21,9 +21,19 @@ class TableModelView{
     
     
     
-    
-    func cadastraPessoa(_ nome: String) -> Pessoa{
+    func cadastraPessoa(_ nome: String, _ imagem: UIImage) -> Pessoa{
         let pessoaCadastro = Pessoa(context: contexto)
+        pessoas = getPessoas()
+        var imagemUrl : URL
+        let qtdPessoas = pessoas.count
+        let subNome = nome.split(separator: " ")
+        let nomeArquivo : String = String(subNome.last!) + String(subNome.first!) + String(qtdPessoas)
+        if let data = imagem.pngData() {
+            imagemUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(nomeArquivo).png")
+            try? data.write(to: imagemUrl)
+            pessoaCadastro.imagemUrl = imagemUrl
+            print(imagemUrl)
+        }
         pessoaCadastro.nome = nome
         do{
             try contexto.save()
@@ -101,6 +111,7 @@ class TableModelView{
         }
         return emails
     }
+
     
     init(){
         

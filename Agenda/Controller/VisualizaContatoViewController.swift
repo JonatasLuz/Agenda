@@ -9,8 +9,8 @@
 import UIKit
 
 class VisualizaContatoViewController: UIViewController {
-
     
+    @IBOutlet weak var imagemContato: UIImageView!
     @IBOutlet weak var ddiLabel: UILabel!
     @IBOutlet weak var dddLabel: UILabel!
     @IBOutlet weak var telefoneLabel: UILabel!
@@ -35,6 +35,7 @@ class VisualizaContatoViewController: UIViewController {
         ddiLabel.text = String(telefones[0].ddi)
         dddLabel.text = String(telefones[0].ddd)
         emailLabel.text = emails[0].email
+        
         print (pessoas.count)
     }
     
