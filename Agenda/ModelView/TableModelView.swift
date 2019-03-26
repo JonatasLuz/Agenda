@@ -32,6 +32,7 @@ class TableModelView{
             imagemUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(nomeArquivo).png")
             try? data.write(to: imagemUrl)
             pessoaCadastro.imagemUrl = imagemUrl
+            pessoaCadastro.imagemContato = nomeArquivo
             print(imagemUrl)
         }
         pessoaCadastro.nome = nome

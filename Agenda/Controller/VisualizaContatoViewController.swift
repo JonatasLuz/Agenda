@@ -35,8 +35,8 @@ class VisualizaContatoViewController: UIViewController {
         ddiLabel.text = String(telefones[0].ddi)
         dddLabel.text = String(telefones[0].ddd)
         emailLabel.text = emails[0].email
-        let imagemURL = pessoas[celula].imagemUrl
-        print(imagemURL)
+        let imagemURL = pessoas[celula].imagemContato
+        print(imagemContato)
         imagemContato.image = load(imagemURL!)
     }
     
@@ -46,9 +46,13 @@ class VisualizaContatoViewController: UIViewController {
         self.present(TableViewController, animated: true, completion: nil)
     }
     
-    func load(_ url  : URL) -> UIImage?{
+    func load(_ url  : String) -> UIImage?{
+        var documentsUrl: URL {
+            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        }
+        let fileURL = documentsUrl.appendingPathComponent(url + ".png")
         do{
-            let imageData = try Data(contentsOf: url)
+            let imageData = try Data(contentsOf: fileURL)
             return UIImage(data: imageData)
             
         }catch{
