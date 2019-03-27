@@ -86,4 +86,55 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
         }))
         self.present(alerta, animated: true, completion: nil)
     }
+    
+    @IBAction func nomeAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
+        
+    }
+    
+    @IBAction func emailAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
+    }
+    
+    @IBAction func ddiAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
+    }
+    
+    @IBAction func dddAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
+    }
+    
+    @IBAction func telefoneAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
+    }
+    
+    
+    func verificaTextField(_ conteudoTexField : String)-> Bool{
+        
+        let conteudosPadrao = ["DDD", "DDI","Telefone","Nome","Email"]
+        var verificaConteudo : Bool = false
+        for conteudo in conteudosPadrao{
+            if conteudoTexField == conteudo{
+                verificaConteudo = true
+                break
+            }
+        }
+        return verificaConteudo
+        
+    }
 }

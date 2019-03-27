@@ -13,15 +13,26 @@ class TableViewController: UITableViewController {
     
     var agenda : TableModelView!
     var pessoas : [Pessoa]!
-    var fone: [Fone]!
+    var telefones: [Fone]!
+    var emails: [Email]!
     
     @IBOutlet weak var adicionaPessoaButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         agenda = TableModelView()
         pessoas = agenda.getPessoas()
-        fone = agenda.getFones()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if pessoas.isEmpty{
+            let alert = UIAlertController(title: "Agenda", message: """
+            Você não possui nenhum contato.
+            """, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
 
     // MARK: - Table view data source
 
@@ -64,18 +75,21 @@ class TableViewController: UITableViewController {
        proxima.celula = tableView.indexPathForSelectedRow?.row
     }
 
-
-    /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            telefones = agenda.getFone(pessoas[indexPath.row])
+            agenda.deletaFone(telefones)
+            emails = agenda.getEmail(pessoas[indexPath.row])
+            agenda.deletaEmail(emails)
+            agenda.deletaPessoa(pessoas[indexPath.row])
+            pessoas.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.

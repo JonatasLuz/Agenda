@@ -40,7 +40,7 @@ class TableModelView{
             try contexto.save()
             
         }catch{
-            print("Erro no Cadastro de Pessoa: \(error)")
+            print("Erro no cadastro de pessoa: \(error)")
         }
         return pessoaCadastro
     }
@@ -50,11 +50,20 @@ class TableModelView{
         do{
             try pessoas =  contexto.fetch(requisicao)
         }catch{
-            print("Erro na leitura: \(error)")
+            print("Erro na leitura de contato: \(error)")
         }
         return pessoas
     }
     
+    func deletaPessoa(_ pessoa : Pessoa){
+        let pessoaDeletada = pessoa as NSManagedObject
+        contexto.delete(pessoaDeletada)
+        do{
+            try contexto.save()
+        }catch{
+            print("Erro para deletar contato \(error)")
+        }
+    }
     
     func cadastraFone(_ ddi: Int,_ ddd: Int, _ telefone: String, _ pessoa : Pessoa){
         let foneCadastro = Fone(context: contexto)
@@ -66,7 +75,7 @@ class TableModelView{
             try contexto.save()
             
         }catch{
-            print("Erro no Cadastro de Telefone: \(error)")
+            print("Erro no cadastro de telefone: \(error)")
         }
     }
     
@@ -75,7 +84,7 @@ class TableModelView{
         do{
             try fones =  contexto.fetch(requisicao)
         }catch{
-            print("Erro na leitura: \(error)")
+            print("Erro na leitura de telefone: \(error)")
         }
         return fones
     }
@@ -88,7 +97,20 @@ class TableModelView{
         }catch{
             print("Erro na leitura de telefone: \(error)")
         }
+        
         return fones
+    }
+    
+    func deletaFone(_ telefones : [Fone] ){
+        let telefonesDeletados = telefones as [NSManagedObject]
+        for telefone in telefonesDeletados{
+            contexto.delete(telefone)
+        }
+        do{
+            try contexto.save()
+        }catch{
+            print("Erro para deletar telefone \(error)")
+        }
     }
     
     func cadastraEmail(_ email : String,_ pessoa : Pessoa){
@@ -98,7 +120,7 @@ class TableModelView{
         do{
             try contexto.save()
         }catch{
-            print("Erro no Cadastro de Email: \(error)")
+            print("Erro no cadastro de email: \(error)")
         }
     }
     
@@ -111,6 +133,18 @@ class TableModelView{
             print("Erro na leitura de email: \(error)")
         }
         return emails
+    }
+    
+    func deletaEmail(_ emails : [Email]){
+        let emailsDeletados = emails as [NSManagedObject]
+        for email in emailsDeletados{
+            contexto.delete(email)
+        }
+        do{
+            try contexto.save()
+        }catch{
+            print("Erro ao deletar email \(error)")
+        }
     }
 
     

@@ -36,7 +36,6 @@ class VisualizaContatoViewController: UIViewController {
         dddLabel.text = String(telefones[0].ddd)
         emailLabel.text = emails[0].email
         let imagemURL = pessoas[celula].imagemContato
-        print(imagemContato)
         imagemContato.image = load(imagemURL!)
     }
     

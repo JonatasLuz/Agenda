@@ -149,16 +149,16 @@
                                 <rect key="frame" x="0.0" y="74" width="375" height="250"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="js7-9Y-rK8">
-                                        <rect key="frame" x="20" y="20" width="335" height="210"/>
+                                        <rect key="frame" x="50" y="20" width="275" height="210"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="ClZ-2C-EeK" userLabel="height = 200"/>
-                                    <constraint firstAttribute="bottom" secondItem="js7-9Y-rK8" secondAttribute="bottom" constant="20" symbolic="YES" id="OJv-Mx-ons"/>
-                                    <constraint firstItem="js7-9Y-rK8" firstAttribute="top" secondItem="KIr-FV-hxp" secondAttribute="top" constant="20" symbolic="YES" id="du5-Jt-DXs"/>
-                                    <constraint firstItem="js7-9Y-rK8" firstAttribute="leading" secondItem="KIr-FV-hxp" secondAttribute="leading" constant="20" symbolic="YES" id="qwX-pF-NY1"/>
-                                    <constraint firstAttribute="trailing" secondItem="js7-9Y-rK8" secondAttribute="trailing" constant="20" symbolic="YES" id="vyv-Hf-dGE"/>
+                                    <constraint firstItem="js7-9Y-rK8" firstAttribute="top" secondItem="KIr-FV-hxp" secondAttribute="top" constant="20" id="c55-v3-2l7"/>
+                                    <constraint firstAttribute="trailing" secondItem="js7-9Y-rK8" secondAttribute="trailing" constant="50" id="dqx-Yb-B3Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="js7-9Y-rK8" secondAttribute="bottom" constant="20" id="gP8-ai-8eC"/>
+                                    <constraint firstItem="js7-9Y-rK8" firstAttribute="leading" secondItem="KIr-FV-hxp" secondAttribute="leading" constant="50" id="sL3-wm-hhD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -230,6 +230,9 @@
                                         <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="qdh-tl-2OQ"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JAf-gl-GaE">
                                         <rect key="frame" x="20" y="55" width="335" height="30"/>
@@ -239,6 +242,9 @@
                                         <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="emailAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="em7-95-n3C"/>
+                                        </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Tfe-Oz-bmT" userLabel="Fone Stack View">
                                         <rect key="frame" x="20" y="100" width="335" height="30"/>
@@ -248,18 +254,27 @@
                                                 <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="ddiAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="wM9-gh-xcF"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DDD" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNY-N4-mJF">
                                                 <rect key="frame" x="117" y="0.0" width="101" height="30"/>
                                                 <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="dddAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="a4j-ZT-Uvu"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Telefone" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tyo-ff-Y9T">
                                                 <rect key="frame" x="234" y="0.0" width="101" height="30"/>
                                                 <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="telefoneAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="gnY-kH-9us"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
