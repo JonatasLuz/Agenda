@@ -147,6 +147,27 @@ class TableModelView{
         }
     }
 
+    func updateTelefone(_ pessoa : Pessoa, _ novoTelefone : Fone){
+        let requisicao : NSFetchRequest<Fone> = Fone.fetchRequest()
+        requisicao.predicate = NSPredicate(format: "pessoa == %@", pessoa)
+        do{
+            try fones = contexto.fetch(requisicao)
+        }catch{
+            print("Erro na leitura de telefone: \(error)")
+        }
+        if fones.count != 0{
+            fones[0].setValue(novoTelefone.telefone, forKey: "telefone")
+            fones[0].setValue(novoTelefone.ddd, forKey: "ddd")
+            fones[0].setValue(novoTelefone.ddi, forKey: "ddi")
+            do{
+                try contexto.save()
+            }catch{
+                print("Erro na atualizacao do telefone \(error)")
+            }
+        }
+    }
+    
+
     
     init(){
         
