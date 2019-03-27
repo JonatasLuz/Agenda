@@ -115,34 +115,41 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxJ-i7-Zgh" userLabel="Telefone View">
                                 <rect key="frame" x="0.0" y="326" width="375" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" alignment="top" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="6C9-fO-3UJ">
-                                        <rect key="frame" x="20" y="10" width="306.5" height="20.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="dav-4e-9nr">
+                                        <rect key="frame" x="20" y="10" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DDI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6Z-1R-tp0">
-                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DDI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6Z-1R-tp0">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DDD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpf-ID-QcW">
-                                                <rect key="frame" x="120.5" y="0.0" width="65.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DDD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpf-ID-QcW">
+                                                <rect key="frame" x="77" y="0.0" width="60.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvz-ci-xTo">
-                                                <rect key="frame" x="241" y="0.0" width="65.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvz-ci-xTo">
+                                                <rect key="frame" x="154.5" y="0.0" width="180.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Wpf-ID-QcW" firstAttribute="width" secondItem="m6Z-1R-tp0" secondAttribute="width" id="4it-xC-zGw"/>
+                                            <constraint firstItem="pvz-ci-xTo" firstAttribute="width" secondItem="Wpf-ID-QcW" secondAttribute="width" multiplier="3:1" id="MHd-xJ-wZz"/>
+                                            <constraint firstAttribute="height" constant="30" id="pIm-yf-CLf"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dav-4e-9nr" secondAttribute="trailing" constant="20" id="OcU-wb-psf"/>
                                     <constraint firstAttribute="height" constant="60" id="Vwr-Mr-ore"/>
+                                    <constraint firstItem="dav-4e-9nr" firstAttribute="leading" secondItem="YxJ-i7-Zgh" secondAttribute="leading" constant="20" id="m3r-pG-I77"/>
+                                    <constraint firstItem="dav-4e-9nr" firstAttribute="top" secondItem="YxJ-i7-Zgh" secondAttribute="top" constant="10" id="sDr-fd-3xC"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIr-FV-hxp">
