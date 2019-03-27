@@ -246,20 +246,11 @@
                                             <action selector="emailAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="em7-95-n3C"/>
                                         </connections>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Tfe-Oz-bmT" userLabel="Fone Stack View">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Lnl-NX-pux">
                                         <rect key="frame" x="20" y="100" width="335" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DDI" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVH-04-Agi">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
-                                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="ddiAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="wM9-gh-xcF"/>
-                                                </connections>
-                                            </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DDD" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNY-N4-mJF">
-                                                <rect key="frame" x="117" y="0.0" width="101" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
                                                 <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -267,8 +258,17 @@
                                                     <action selector="dddAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="a4j-ZT-Uvu"/>
                                                 </connections>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="DDI" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVH-04-Agi">
+                                                <rect key="frame" x="82" y="0.0" width="57" height="30"/>
+                                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="ddiAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="wM9-gh-xcF"/>
+                                                </connections>
+                                            </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Telefone" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tyo-ff-Y9T">
-                                                <rect key="frame" x="234" y="0.0" width="101" height="30"/>
+                                                <rect key="frame" x="164" y="0.0" width="171" height="30"/>
                                                 <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -278,21 +278,23 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="FX8-PQ-j4I"/>
+                                            <constraint firstItem="tyo-ff-Y9T" firstAttribute="width" secondItem="WVH-04-Agi" secondAttribute="width" multiplier="3:1" id="G8L-gN-CtT"/>
+                                            <constraint firstItem="WVH-04-Agi" firstAttribute="width" secondItem="aNY-N4-mJF" secondAttribute="width" id="jOJ-9n-IQQ"/>
+                                            <constraint firstAttribute="height" constant="30" id="s7d-hF-g0C"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="hXY-h4-LVy" firstAttribute="top" secondItem="2tQ-67-oQj" secondAttribute="top" constant="10" id="6re-bw-ZIL"/>
-                                    <constraint firstItem="Tfe-Oz-bmT" firstAttribute="leading" secondItem="2tQ-67-oQj" secondAttribute="leading" constant="20" symbolic="YES" id="7YO-du-zpJ"/>
                                     <constraint firstAttribute="trailing" secondItem="hXY-h4-LVy" secondAttribute="trailing" constant="20" symbolic="YES" id="AoU-8v-DhN"/>
                                     <constraint firstItem="JAf-gl-GaE" firstAttribute="leading" secondItem="2tQ-67-oQj" secondAttribute="leading" constant="20" symbolic="YES" id="BLY-NG-Ldx"/>
-                                    <constraint firstItem="Tfe-Oz-bmT" firstAttribute="top" secondItem="JAf-gl-GaE" secondAttribute="bottom" constant="15" id="KSd-Nx-lmH"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tfe-Oz-bmT" secondAttribute="trailing" constant="20" symbolic="YES" id="SEV-UX-eQp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lnl-NX-pux" secondAttribute="trailing" constant="20" id="I5w-Tu-Hxv"/>
+                                    <constraint firstItem="Lnl-NX-pux" firstAttribute="leading" secondItem="2tQ-67-oQj" secondAttribute="leading" constant="20" id="WdS-Ld-thp"/>
                                     <constraint firstItem="hXY-h4-LVy" firstAttribute="leading" secondItem="2tQ-67-oQj" secondAttribute="leading" constant="20" symbolic="YES" id="kNP-tP-qm5"/>
                                     <constraint firstAttribute="trailing" secondItem="JAf-gl-GaE" secondAttribute="trailing" constant="20" symbolic="YES" id="mMl-bZ-SS4"/>
                                     <constraint firstItem="JAf-gl-GaE" firstAttribute="top" secondItem="hXY-h4-LVy" secondAttribute="bottom" constant="15" id="pEl-9W-6tz"/>
+                                    <constraint firstItem="Lnl-NX-pux" firstAttribute="top" secondItem="JAf-gl-GaE" secondAttribute="bottom" constant="15" id="t8N-8G-YhZ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDE-Iw-2kF">
@@ -309,10 +311,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="3vU-me-VOm"/>
-                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="top" secondItem="DDE-Iw-2kF" secondAttribute="top" constant="10" id="TAP-g6-xG1"/>
-                                    <constraint firstAttribute="bottom" secondItem="M7o-Ms-Xax" secondAttribute="bottom" constant="10" id="WEE-uL-vhC"/>
-                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="leading" secondItem="DDE-Iw-2kF" secondAttribute="leading" constant="80" id="aM3-1L-Pll"/>
-                                    <constraint firstAttribute="trailing" secondItem="M7o-Ms-Xax" secondAttribute="trailing" constant="80" id="xGO-Sl-mNb"/>
+                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="centerY" secondItem="DDE-Iw-2kF" secondAttribute="centerY" id="XKN-1W-zK1"/>
+                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="top" secondItem="DDE-Iw-2kF" secondAttribute="top" constant="10" id="njE-wi-ZPL"/>
+                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="leading" secondItem="DDE-Iw-2kF" secondAttribute="leading" constant="80" id="oDW-DF-VPk"/>
+                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="centerX" secondItem="DDE-Iw-2kF" secondAttribute="centerX" id="smW-mh-4pu"/>
                                 </constraints>
                             </view>
                         </subviews>
