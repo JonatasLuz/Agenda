@@ -113,6 +113,40 @@ class TableModelView{
         }
     }
     
+    
+    func updateTelefone(_ pessoa : Pessoa, _ novoTelefone : Fone){
+        let requisicao : NSFetchRequest<Fone> = Fone.fetchRequest()
+        requisicao.predicate = NSPredicate(format: "pessoa == %@", pessoa)
+        do{
+            try fones = contexto.fetch(requisicao)
+        }catch{
+            print("Erro na leitura de telefone: \(error)")
+        }
+        if fones.count != 0{
+            fones[0].setValue(novoTelefone.telefone, forKey: "telefone")
+            fones[0].setValue(novoTelefone.ddd, forKey: "ddd")
+            fones[0].setValue(novoTelefone.ddi, forKey: "ddi")
+            do{
+                try contexto.save()
+            }catch{
+                print("Erro na atualizacao do telefone \(error)")
+            }
+        }
+    }
+    
+    func updateEmail(_ pessoa: Pessoa, _ novoEmail: String){
+        let requisicao : NSFetchRequest<Email> = Email.fetchRequest()
+        requisicao.predicate = NSPredicate(format: "pessoa = %@", pessoa)
+        do{
+            try emails = contexto.fetch(requisicao)
+        }catch{
+            print("Erro na atualizacao do email: \(error)")
+        }
+        if emails.count != 0{
+            emails[0].setValue(novoEmail, forKey: "email")
+        }
+    }
+    
     func cadastraEmail(_ email : String,_ pessoa : Pessoa){
         let emailCadastro = Email(context: contexto)
         emailCadastro.email = email
@@ -147,25 +181,6 @@ class TableModelView{
         }
     }
 
-    func updateTelefone(_ pessoa : Pessoa, _ novoTelefone : Fone){
-        let requisicao : NSFetchRequest<Fone> = Fone.fetchRequest()
-        requisicao.predicate = NSPredicate(format: "pessoa == %@", pessoa)
-        do{
-            try fones = contexto.fetch(requisicao)
-        }catch{
-            print("Erro na leitura de telefone: \(error)")
-        }
-        if fones.count != 0{
-            fones[0].setValue(novoTelefone.telefone, forKey: "telefone")
-            fones[0].setValue(novoTelefone.ddd, forKey: "ddd")
-            fones[0].setValue(novoTelefone.ddi, forKey: "ddi")
-            do{
-                try contexto.save()
-            }catch{
-                print("Erro na atualizacao do telefone \(error)")
-            }
-        }
-    }
     
 
     
