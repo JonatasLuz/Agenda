@@ -65,6 +65,20 @@ class TableModelView{
         }
     }
     
+    func updatePessoa(_ pessoaAntiga : Pessoa, _ pessoaNova : Pessoa ){
+        let requisicao : NSFetchRequest<Pessoa> = Pessoa.fetchRequest()
+        requisicao.predicate = NSPredicate(format: "imagemContato", pessoaAntiga.imagemContato!)
+        do{
+            try pessoas = contexto.fetch(requisicao)
+        }catch{
+            print("Erro na atualizacao de contato: \(error)")
+        }
+        if pessoas.count > 0{
+            pessoas[0].setValue(pessoaNova.nome, forKey: "nome")
+            pessoas[0].setValue(pessoaNova.imagemContato, forKey: "imagemContato")
+        }
+    }
+    
     func cadastraFone(_ ddi: Int,_ ddd: Int, _ telefone: String, _ pessoa : Pessoa){
         let foneCadastro = Fone(context: contexto)
         foneCadastro.ddd = Int64(ddd)
@@ -114,7 +128,7 @@ class TableModelView{
     }
     
     
-    func updateTelefone(_ pessoa : Pessoa, _ novoTelefone : Fone){
+    func updateFone(_ pessoa : Pessoa, _ novoTelefone : Fone){
         let requisicao : NSFetchRequest<Fone> = Fone.fetchRequest()
         requisicao.predicate = NSPredicate(format: "pessoa == %@", pessoa)
         do{
@@ -134,18 +148,7 @@ class TableModelView{
         }
     }
     
-    func updateEmail(_ pessoa: Pessoa, _ novoEmail: String){
-        let requisicao : NSFetchRequest<Email> = Email.fetchRequest()
-        requisicao.predicate = NSPredicate(format: "pessoa = %@", pessoa)
-        do{
-            try emails = contexto.fetch(requisicao)
-        }catch{
-            print("Erro na atualizacao do email: \(error)")
-        }
-        if emails.count != 0{
-            emails[0].setValue(novoEmail, forKey: "email")
-        }
-    }
+
     
     func cadastraEmail(_ email : String,_ pessoa : Pessoa){
         let emailCadastro = Email(context: contexto)
@@ -180,6 +183,20 @@ class TableModelView{
             print("Erro ao deletar email \(error)")
         }
     }
+    
+    func updateEmail(_ pessoa: Pessoa, _ novoEmail: String){
+        let requisicao : NSFetchRequest<Email> = Email.fetchRequest()
+        requisicao.predicate = NSPredicate(format: "pessoa = %@", pessoa)
+        do{
+            try emails = contexto.fetch(requisicao)
+        }catch{
+            print("Erro na atualizacao do email: \(error)")
+        }
+        if emails.count != 0{
+            emails[0].setValue(novoEmail, forKey: "email")
+        }
+    }
+    
 
     
 
