@@ -71,9 +71,10 @@ class TableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let proxima = segue.destination as! VisualizaContatoViewController
-       proxima.celula = tableView.indexPathForSelectedRow?.row
+        if segue.identifier != "segueFavorito"{
+            let proxima = segue.destination as! VisualizaContatoViewController
+            proxima.celula = tableView.indexPathForSelectedRow?.row
+        }
     }
 
     // Override to support editing the table view.
@@ -93,9 +94,7 @@ class TableViewController: UITableViewController {
     }
 
     @IBAction func favoritosAction(_ sender: UIButton) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let favoritosViewController = storyBoard.instantiateViewController(withIdentifier: "Favoritos") as! FavoritosViewController
-        self.present(favoritosViewController, animated: true, completion: nil)
+        performSegue(withIdentifier: "segueFavorito", sender:self)
     }
     /*
     // Override to support rearranging the table view.

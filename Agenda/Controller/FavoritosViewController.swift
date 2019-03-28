@@ -12,7 +12,8 @@ import UIKit
 class FavoritosViewController: UICollectionViewController {
     private let reuseIdentifier = "ContatoCell"
     private let reuseIdentifierHEader = "CollectionHeader"
-
+    @IBOutlet weak var voltarMenu: UIBarButtonItem!
+    
     var pessoas : [Pessoa]!
     var agenda: TableModelView!
     override func viewDidLoad() {
@@ -56,16 +57,19 @@ class FavoritosViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let linha = indexPath.row
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ContatoViewCell
-         let toque = UITapGestureRecognizer(target: self, action: #selector(FavoritosViewController.tocarContato))
+        let toque = UITapGestureRecognizer(target: self, action: #selector(FavoritosViewController.tocarContato))
         cell.contatoImagemView.addGestureRecognizer(toque)
         cell.contatoImagemView.image = agenda.getImagem(pessoas[linha].imagemContato!)
         cell.nomeLabel.text = pessoas[linha].nome
         return cell
     }
     
+    
     @objc func tocarContato()
     {
-        print("Porra bixo")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let visualizaContato = storyBoard.instantiateViewController(withIdentifier: "visualizaContato") as! VisualizaContatoViewController
+        self.present(visualizaContato, animated: true, completion: nil)
     }
 
     // MARK: UICollectionViewDelegate
@@ -98,5 +102,10 @@ class FavoritosViewController: UICollectionViewController {
     
     }
     */
-
+    @IBAction func voltarAction(_ sender: UIBarButtonItem) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let TableViewController = storyBoard.instantiateViewController(withIdentifier: "Menu") as! TableViewController
+        self.present(TableViewController, animated: true, completion: nil)
+    }
+    
 }
