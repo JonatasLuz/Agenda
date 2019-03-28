@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5703F29A224C50D4008BC893 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5703F299224C50D4008BC893 /* FavoritosViewController.swift */; };
+		57646041224D178C008C8518 /* ContatoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57646040224D178C008C8518 /* ContatoViewCell.swift */; };
 		57702439223C75E700F43C06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57702438223C75E700F43C06 /* AppDelegate.swift */; };
 		5770243E223C75E700F43C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5770243C223C75E700F43C06 /* Main.storyboard */; };
 		57702441223C75E700F43C06 /* Agenda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5770243F223C75E700F43C06 /* Agenda.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		5703F299224C50D4008BC893 /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
+		57646040224D178C008C8518 /* ContatoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContatoViewCell.swift; sourceTree = "<group>"; };
 		57702435223C75E700F43C06 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57702438223C75E700F43C06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5770243D223C75E700F43C06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				57E330B52242DAF700686269 /* AdicionarPessoaViewController.swift */,
 				57E330BD224317CB00686269 /* VisualizaContatoViewController.swift */,
 				5703F299224C50D4008BC893 /* FavoritosViewController.swift */,
+				57646040224D178C008C8518 /* ContatoViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				57702441223C75E700F43C06 /* Agenda.xcdatamodeld in Sources */,
 				5703F29A224C50D4008BC893 /* FavoritosViewController.swift in Sources */,
 				5770244F223C763800F43C06 /* TableViewController.swift in Sources */,
+				57646041224D178C008C8518 /* ContatoViewCell.swift in Sources */,
 				57E330BE224317CB00686269 /* VisualizaContatoViewController.swift in Sources */,
 				57E330B62242DAF700686269 /* AdicionarPessoaViewController.swift in Sources */,
 				57702452223C7EAF00F43C06 /* TableModelView.swift in Sources */,
