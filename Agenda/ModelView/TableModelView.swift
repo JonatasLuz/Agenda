@@ -75,7 +75,6 @@ class TableModelView{
         }
         
         let requisicao : NSFetchRequest<Pessoa> = Pessoa.fetchRequest()
-        print(pessoaAntiga.imagemContato)
         requisicao.predicate = NSPredicate(format: "imagemContato = %@", pessoaAntiga.imagemContato!)
         do{
             try pessoas = contexto.fetch(requisicao)

@@ -11,6 +11,7 @@ import CoreData
 
 class TableViewController: UITableViewController {
     
+    @IBOutlet weak var favoritosButton: UIBarButtonItem!
     var agenda : TableModelView!
     var pessoas : [Pessoa]!
     var telefones: [Fone]!
@@ -91,6 +92,11 @@ class TableViewController: UITableViewController {
         }
     }
 
+    @IBAction func favoritosAction(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let favoritosViewController = storyBoard.instantiateViewController(withIdentifier: "Favoritos") as! FavoritosViewController
+        self.present(favoritosViewController, animated: true, completion: nil)
+    }
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
