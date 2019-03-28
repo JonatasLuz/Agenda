@@ -28,7 +28,22 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     var agenda: TableModelView = TableModelView()
     var pessoa : Pessoa!
     var pessoas : [Pessoa]!
+    var telefones : [Fone]!
+    var emails : [Email]!
+    var editor : Bool = false
+    
     override func viewDidLoad() {
+        if pessoa != nil{
+            telefones = agenda.getFone(pessoa)
+            emails = agenda.getEmail(pessoa)
+            nomeTextField.text = pessoa.nome
+            emailTextField.text = emails[0].email
+            ddiTextField.text = String(telefones[0].ddi)
+            dddTextField.text = String(telefones[0].ddd)
+            telefoneTextField.text = telefones[0].telefone
+            adicionaImagemButton.setImage(agenda.getImagem(pessoa.imagemContato!), for: [])
+            cadastrarButton.title = "Salvar"
+        }
         super.viewDidLoad()
     }
     
@@ -71,15 +86,23 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     }
     
     @IBAction func cadastrarAction(_ sender: UIButton) {
-        
-        
-       // let imagemNome = String(pessoas.count)
-        
-        let imagem = adicionaImagemButton.image(for: [])
- 
-        pessoa = agenda.cadastraPessoa(nomeTextField.text!, imagem!)
-        agenda.cadastraEmail(emailTextField.text!, pessoa)
-        agenda.cadastraFone(Int(ddiTextField.text!)!, Int(dddTextField.text!)!, telefoneTextField.text!, pessoa)
+        if editor == true{
+            let pessoaAntiga = pessoa
+            telefones[0].ddi = Int64(ddiTextField.text!)!
+            telefones[0].ddd = Int64(dddTextField.text!)!
+            telefones[0].telefone = telefoneTextField.text
+            emails[0].email = emailTextField.text
+            agenda.updateFone(pessoa, telefones[0])
+            pessoa.nome = nomeTextField.text
+            agenda.updateEmail(pessoa, emailTextField.text!)
+            agenda.updatePessoa(pessoaAntiga!, pessoa, (adicionaImagemButton.imageView?.image)!)
+            
+        }else{
+            let imagem = adicionaImagemButton.image(for: [])
+            pessoa = agenda.cadastraPessoa(nomeTextField.text!, imagem!)
+            agenda.cadastraEmail(emailTextField.text!, pessoa)
+            agenda.cadastraFone(Int(ddiTextField.text!)!, Int(dddTextField.text!)!, telefoneTextField.text!, pessoa)
+        }
         let alerta = UIAlertController(title: "Agenda", message: "Contato cadastrado com sucesso", preferredStyle: .alert)
         alerta.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {
             _ in self.retornaMenu()
@@ -88,17 +111,17 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     }
     
     @IBAction func nomeAction(_ sender: UITextField) {
+        sender.textColor = UIColor.black
         if verificaTextField(sender.text!) == true{
             sender.text = ""
-            sender.textColor = UIColor.black
         }
         
     }
     
     @IBAction func emailAction(_ sender: UITextField) {
+        sender.textColor = UIColor.black
         if verificaTextField(sender.text!) == true{
             sender.text = ""
-            sender.textColor = UIColor.black
         }
     }
     
@@ -135,6 +158,5 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             }
         }
         return verificaConteudo
-        
     }
 }

@@ -88,7 +88,11 @@
                                                 <action selector="voltarAction:" destination="EMi-Io-lLa" id="yvN-zc-lMu"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Editar" id="F5f-di-lWg"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Editar" id="F5f-di-lWg">
+                                            <connections>
+                                                <action selector="editarAction:" destination="EMi-Io-lLa" id="n1a-bq-J1f"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -190,6 +194,7 @@
                     <connections>
                         <outlet property="dddLabel" destination="Wpf-ID-QcW" id="1Wy-NW-xlJ"/>
                         <outlet property="ddiLabel" destination="m6Z-1R-tp0" id="9cB-j5-B4J"/>
+                        <outlet property="editarButon" destination="F5f-di-lWg" id="FEI-3Y-QZM"/>
                         <outlet property="emailLabel" destination="Ssn-Ug-vAz" id="4vF-qv-2OP"/>
                         <outlet property="imagemContato" destination="js7-9Y-rK8" id="X07-8m-zLX"/>
                         <outlet property="nomeContatoLabel" destination="10c-jD-mwB" id="fWc-gI-TsR"/>

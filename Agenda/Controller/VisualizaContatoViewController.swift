@@ -10,6 +10,7 @@ import UIKit
 
 class VisualizaContatoViewController: UIViewController {
     
+    @IBOutlet weak var editarButon: UIBarButtonItem!
     @IBOutlet weak var imagemContato: UIImageView!
     @IBOutlet weak var ddiLabel: UILabel!
     @IBOutlet weak var dddLabel: UILabel!
@@ -36,7 +37,7 @@ class VisualizaContatoViewController: UIViewController {
         dddLabel.text = String(telefones[0].ddd)
         emailLabel.text = emails[0].email
         let imagemURL = pessoas[celula].imagemContato
-        imagemContato.image = load(imagemURL!)
+        imagemContato.image = agenda.getImagem(imagemURL!)
     }
     
     @IBAction func voltarAction(_ sender: UIBarButtonItem) {
@@ -60,10 +61,16 @@ class VisualizaContatoViewController: UIViewController {
         return nil
     }
     
+    @IBAction func editarAction(_ sender: UIBarButtonItem) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let adicionaPessoa = storyBoard.instantiateViewController(withIdentifier: "IncluirPessoa") as! AdicionarPessoaViewController
+        adicionaPessoa.pessoa = pessoas[celula]
+        adicionaPessoa.editor = true
+        self.present(adicionaPessoa, animated: true, completion: nil)
+    }
     
     
-    /*
-    // MARK: - Navigation
+    /*// MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
