@@ -219,9 +219,44 @@ class TableModelView{
         }
         return nil
     }
+    func cadastraEndereco(_ pais : String, _ estado : String, _ cidade : String, _ rua : String, _ numero : Int, _ complemento  : String , _ pessoa: Pessoa){
+        let enderecoCadastro = Endereco(context: contexto)
+        enderecoCadastro.pais = pais
+        enderecoCadastro.estado = estado
+        enderecoCadastro.cidade = cidade
+        enderecoCadastro.rua = rua
+        enderecoCadastro.numero = Int64(numero)
+        enderecoCadastro.complemento = complemento
+        enderecoCadastro.pessoa = pessoa
+        do{
+            try contexto.save()
+        }catch{
+            print("Erro no cadastro de endereço: \(error)")
+        }
+    }
     
-
+    func getEndereco(_ pessoa : Pessoa) -> Endereco{
+        let requisicao : NSFetchRequest<Endereco> = Endereco.fetchRequest()
+        var endereco : [Endereco] = []
+        requisicao.predicate = NSPredicate(format: "pessoa = %@", pessoa)
+        do{
+            try endereco = contexto.fetch(requisicao)
+        }catch{
+            print("Erro na leitura de endereço")
+        }
+        
+        return endereco[0]
+    }
     
+    func deletaFone(_ endereco : Endereco ){
+        let enderecoDeletado = endereco as NSManagedObject
+            contexto.delete(enderecoDeletado)
+        do{
+            try contexto.save()
+        }catch{
+            print("Erro para deletar endereço \(error)")
+        }
+    }
 
     
     init(){

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G5019" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Email" representedClassName="Email" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="pessoa" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pessoa" inverseName="email" inverseEntity="Pessoa" syncable="YES"/>
+    </entity>
+    <entity name="Endereco" representedClassName="Endereco" syncable="YES" codeGenerationType="class">
+        <attribute name="cidade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="complemento" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="estado" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numero" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pais" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rua" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pessoa" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pessoa" inverseName="endereco" inverseEntity="Pessoa" syncable="YES"/>
     </entity>
     <entity name="Fone" representedClassName="Fone" syncable="YES" codeGenerationType="class">
         <attribute name="ddd" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -15,11 +24,13 @@
         <attribute name="imagemUrl" optional="YES" attributeType="URI" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="email" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="pessoa" inverseEntity="Email" syncable="YES"/>
+        <relationship name="endereco" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Endereco" inverseName="pessoa" inverseEntity="Endereco" syncable="YES"/>
         <relationship name="fone" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fone" inverseName="pessoa" inverseEntity="Fone" syncable="YES"/>
     </entity>
     <elements>
         <element name="Email" positionX="-390.1015625" positionY="-142.44921875" width="128" height="73"/>
         <element name="Fone" positionX="-362.03515625" positionY="45.96875" width="128" height="103"/>
-        <element name="Pessoa" positionX="-95.68359375" positionY="-143.78515625" width="128" height="120"/>
+        <element name="Pessoa" positionX="-95.68359375" positionY="-143.78515625" width="128" height="135"/>
+        <element name="Endereco" positionX="-243" positionY="-9" width="128" height="150"/>
     </elements>
 </model>
