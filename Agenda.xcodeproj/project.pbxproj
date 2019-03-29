@@ -16,6 +16,7 @@
 		57702446223C75E800F43C06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57702444223C75E800F43C06 /* LaunchScreen.storyboard */; };
 		5770244F223C763800F43C06 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5770244E223C763800F43C06 /* TableViewController.swift */; };
 		57702452223C7EAF00F43C06 /* TableModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57702451223C7EAF00F43C06 /* TableModelView.swift */; };
+		5790C593224D7F1800314C17 /* FavoritosHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C592224D7F1800314C17 /* FavoritosHeaderController.swift */; };
 		57E330B62242DAF700686269 /* AdicionarPessoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E330B52242DAF700686269 /* AdicionarPessoaViewController.swift */; };
 		57E330BE224317CB00686269 /* VisualizaContatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E330BD224317CB00686269 /* VisualizaContatoViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		57702447223C75E800F43C06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5770244E223C763800F43C06 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		57702451223C7EAF00F43C06 /* TableModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModelView.swift; sourceTree = "<group>"; };
+		5790C592224D7F1800314C17 /* FavoritosHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosHeaderController.swift; sourceTree = "<group>"; };
 		57E330B52242DAF700686269 /* AdicionarPessoaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarPessoaViewController.swift; sourceTree = "<group>"; };
 		57E330BD224317CB00686269 /* VisualizaContatoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizaContatoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 				57E330BD224317CB00686269 /* VisualizaContatoViewController.swift */,
 				5703F299224C50D4008BC893 /* FavoritosViewController.swift */,
 				57646040224D178C008C8518 /* ContatoViewCell.swift */,
+				5790C592224D7F1800314C17 /* FavoritosHeaderController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57702441223C75E700F43C06 /* Agenda.xcdatamodeld in Sources */,
+				5790C593224D7F1800314C17 /* FavoritosHeaderController.swift in Sources */,
 				5703F29A224C50D4008BC893 /* FavoritosViewController.swift in Sources */,
 				5770244F223C763800F43C06 /* TableViewController.swift in Sources */,
 				57646041224D178C008C8518 /* ContatoViewCell.swift in Sources */,

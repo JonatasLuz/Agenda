@@ -94,7 +94,9 @@ class TableViewController: UITableViewController {
     }
 
     @IBAction func favoritosAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueFavorito", sender:self)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let favoritoCV = storyBoard.instantiateViewController(withIdentifier: "Favoritos") as! FavoritosViewController
+        self.present(favoritoCV, animated: true, completion: nil)
     }
     /*
     // Override to support rearranging the table view.

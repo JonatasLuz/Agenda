@@ -11,7 +11,7 @@ import UIKit
 
 class FavoritosViewController: UICollectionViewController {
     private let reuseIdentifier = "ContatoCell"
-    private let reuseIdentifierHEader = "CollectionHeader"
+    private let reuseIdentifierHEader = "Header"
     @IBOutlet weak var voltarMenu: UIBarButtonItem!
     
     var pessoas : [Pessoa]!
@@ -62,6 +62,14 @@ class FavoritosViewController: UICollectionViewController {
         cell.contatoImagemView.image = agenda.getImagem(pessoas[linha].imagemContato!)
         cell.nomeLabel.text = pessoas[linha].nome
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
+        var headerView : UICollectionReusableView = UICollectionReusableView()
+        if kind == UICollectionView.elementKindSectionHeader{
+            headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath)
+        }
+        return headerView
     }
     
     
