@@ -228,6 +228,7 @@ class TableModelView{
         enderecoCadastro.numero = Int64(numero)
         enderecoCadastro.complemento = complemento
         enderecoCadastro.pessoa = pessoa
+        print(contexto)
         do{
             try contexto.save()
         }catch{
@@ -244,11 +245,10 @@ class TableModelView{
         }catch{
             print("Erro na leitura de endereço")
         }
-        
-        return endereco[0]
+        return endereco.first!
     }
     
-    func deletaEndereco(_ endereco : Endereco ){
+    func deletaFone(_ endereco : Endereco ){
         let enderecoDeletado = endereco as NSManagedObject
             contexto.delete(enderecoDeletado)
         do{

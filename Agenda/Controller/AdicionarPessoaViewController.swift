@@ -126,6 +126,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             pessoa = agenda.cadastraPessoa(nomeTextField.text!, imagem!)
             agenda.cadastraEmail(emailTextField.text!, pessoa)
             agenda.cadastraFone(Int(ddiTextField.text!)!, Int(dddTextField.text!)!, telefoneTextField.text!, pessoa)
+            agenda.cadastraEndereco(paisTextField.text!, estadoTextField.text!, cidadeTextField.text!, ruaTextField.text!, Int(numeroTextField.text!)!, complementoTextField.text!, pessoa)
         }
         let alerta = UIAlertController(title: "Agenda", message: "Contato cadastrado com sucesso", preferredStyle: .alert)
         alerta.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {

@@ -22,7 +22,7 @@ class VisualizaContatoViewController: UIViewController {
     var pessoas : [Pessoa]!
     var telefones : [Fone]!
     var emails : [Email]!
-    var endereco : [Endereco]!
+    var endereco : Endereco!
     var agenda : TableModelView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,7 @@ class VisualizaContatoViewController: UIViewController {
         pessoas = agenda.getPessoas()
         telefones = agenda.getFone(pessoas[celula])
         emails = agenda.getEmail(pessoas[celula])
+        endereco = agenda.getEndereco(pessoas[celula])
             
         nomeContatoLabel.title = pessoas[celula].nome
         telefoneLabel.text = telefones[0].telefone
