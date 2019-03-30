@@ -302,9 +302,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDE-Iw-2kF">
                                 <rect key="frame" x="0.0" y="66" width="375" height="181.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="center" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-Ms-Xax">
+                                    <button opaque="NO" contentMode="top" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-Ms-Xax">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="181.5"/>
-                                        <state key="normal" image="contato"/>
+                                        <state key="normal" image="contato">
+                                            <color key="titleShadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="adicionaImagemAction:" destination="UaZ-rN-LeZ" eventType="touchUpInside" id="jre-mf-LH3"/>
                                         </connections>
@@ -359,6 +361,7 @@
                         <outlet property="emailTextField" destination="JAf-gl-GaE" id="PQ8-fS-NIi"/>
                         <outlet property="nomeTextField" destination="hXY-h4-LVy" id="ABi-8b-LG3"/>
                         <outlet property="telefoneTextField" destination="tyo-ff-Y9T" id="AnM-ih-MHX"/>
+                        <outlet property="viewImagem" destination="DDE-Iw-2kF" id="LbR-8u-Kmk"/>
                         <outlet property="voltarButton" destination="k4p-tk-jfp" id="hYa-n6-DEg"/>
                     </connections>
                 </viewController>
@@ -456,7 +459,7 @@
                                         <navigationItem title="Favoritos" id="3HU-qD-fKB">
                                             <barButtonItem key="leftBarButtonItem" title="Voltar" id="qFb-Mc-NWi">
                                                 <connections>
-                                                    <action selector="voltarButton:" destination="vDy-vT-QRB" id="AHo-0F-p4C"/>
+                                                    <action selector="voltarAction:" destination="iLS-dE-131" id="GSb-SY-wjf"/>
                                                 </connections>
                                             </barButtonItem>
                                         </navigationItem>
@@ -486,7 +489,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hh-bL-bow" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34" y="-137"/>
+            <point key="canvasLocation" x="-831" y="-167"/>
         </scene>
     </scenes>
     <resources>

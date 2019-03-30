@@ -11,7 +11,6 @@ import UIKit
 
 class FavoritosViewController: UICollectionViewController {
     private let reuseIdentifier = "ContatoCell"
-    private let reuseIdentifierHEader = "Header"
     @IBOutlet weak var voltarMenu: UIBarButtonItem!
     
     var pessoas : [Pessoa]!

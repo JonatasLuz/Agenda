@@ -11,7 +11,8 @@ import UIKit
 class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
-
+    @IBOutlet weak var viewImagem: UIView!
+    
     @IBOutlet weak var adicionaImagemButton: UIButton!
     @IBOutlet weak var voltarButton: UIBarButtonItem!
     @IBOutlet weak var cadastrarButton: UIBarButtonItem!
@@ -45,6 +46,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             cadastrarButton.title = "Salvar"
         }
         super.viewDidLoad()
+
     }
     
     func retornaMenu(){
@@ -75,6 +77,14 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
 
     
     @IBAction func adicionaImagemAction(_ sender: UIButton) {
+        adicionaImagemButton.widthAnchor.constraint(equalTo: adicionaImagemButton.widthAnchor , multiplier: 1.0)
+        adicionaImagemButton.centerXAnchor.constraint(equalToSystemSpacingAfter: viewImagem.centerXAnchor, multiplier: 1)
+        adicionaImagemButton.centerYAnchor.constraint(equalToSystemSpacingBelow: viewImagem.centerYAnchor, multiplier: 1)
+        adicionaImagemButton.topAnchor.constraint(equalToSystemSpacingBelow: viewImagem.topAnchor, multiplier: 1)
+        adicionaImagemButton.bottomAnchor.constraint(equalToSystemSpacingBelow: viewImagem.bottomAnchor, multiplier: 1)
+        print(viewImagem.center)
+        print(viewImagem.centerYAnchor)
+        adicionaImagemButton.center = viewImagem.center
         
         let alerta = UIAlertController(title: "Agenda", message: "O aplicativo irá acessar as suas fotos", preferredStyle: .alert)
         alerta.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in self.acessaGaleria()}))
