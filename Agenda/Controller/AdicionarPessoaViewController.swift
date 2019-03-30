@@ -12,7 +12,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     
     @IBOutlet weak var pessoaStackView: UIStackView!
     @IBOutlet weak var cidadeStackView: UIStackView!
-    @IBOutlet weak var ruaStackView: UIStackView!
+    @IBOutlet weak var ruaStackView: UIStackView!   
     
     @IBOutlet weak var telefoneStackView: UIStackView!
     @IBOutlet weak var complementoLabel: UITextField!
@@ -52,10 +52,10 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             telefones = agenda.getFone(pessoa)
             emails = agenda.getEmail(pessoa)
             nomeTextField.text = pessoa.nome
-            emailTextField.text = emails[0].email
-            ddiTextField.text = String(telefones[0].ddi)
-            dddTextField.text = String(telefones[0].ddd)
-            telefoneTextField.text = telefones[0].telefone
+            emailTextField.text = emails.first?.email
+            ddiTextField.text = String(telefones.first!.ddi)
+            dddTextField.text = String(telefones.first!.ddd)
+            telefoneTextField.text = telefones.first!.telefone
             adicionaImagemButton.setImage(agenda.getImagem(pessoa.imagemContato!), for: [])
             cadastrarButton.title = "Salvar"
         }
@@ -67,6 +67,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
         telefoneStackView.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
         nomeTextField.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
         emailTextField.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
+        print(adicionaImagemButton.heightAnchor)
         
         
     }
@@ -94,6 +95,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             imagemSelectionada = imagemEditada
             adicionaImagemButton.setImage(imagemSelectionada, for: [])
             picker.dismiss(animated: true, completion: nil)
+            print("entro")
         }
     }
 

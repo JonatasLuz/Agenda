@@ -12,10 +12,4 @@ class FavoritosHeaderController: UICollectionReusableView {
     @IBOutlet weak var titulo: UINavigationItem!
     
     @IBOutlet weak var voltarButton: UIBarButtonItem!
-    
-
-    @IBAction func voltarButton(_ sender: UIBarButtonItem) {
-       
-        
     }
-}
