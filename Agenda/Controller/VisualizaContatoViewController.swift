@@ -9,6 +9,11 @@
 import UIKit
 
 class VisualizaContatoViewController: UIViewController {
+    @IBOutlet weak var paisLabel: UILabel!
+    @IBOutlet weak var cidadeLabel: UILabel!
+    @IBOutlet weak var estadoLabel: UILabel!
+    @IBOutlet weak var ruaLabel: UILabel!
+    @IBOutlet weak var complementoLabel: UILabel!
     
     @IBOutlet weak var editarButon: UIBarButtonItem!
     @IBOutlet weak var imagemContato: UIImageView!
@@ -40,6 +45,11 @@ class VisualizaContatoViewController: UIViewController {
         emailLabel.text = emails[0].email
         let imagemURL = pessoas[celula].imagemContato
         imagemContato.image = agenda.getImagem(imagemURL!)
+        paisLabel.text = endereco.pais
+        estadoLabel.text = endereco.estado
+        cidadeLabel.text = endereco.cidade
+        
+        
     }
     
     @IBAction func voltarAction(_ sender: UIBarButtonItem) {
