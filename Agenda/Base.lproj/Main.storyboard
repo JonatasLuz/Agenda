@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I4k-wG-huk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I4k-wG-huk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -303,7 +303,7 @@
                                 <rect key="frame" x="0.0" y="66" width="375" height="181.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="top" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-Ms-Xax">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="181.5"/>
+                                        <rect key="frame" x="99" y="0.0" width="176" height="181.5"/>
                                         <state key="normal" image="contato">
                                             <color key="titleShadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -314,13 +314,89 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="top" secondItem="DDE-Iw-2kF" secondAttribute="top" id="h43-tK-xV9"/>
-                                    <constraint firstAttribute="bottom" secondItem="M7o-Ms-Xax" secondAttribute="bottom" id="hJh-C2-dPX"/>
+                                    <constraint firstAttribute="bottom" secondItem="M7o-Ms-Xax" secondAttribute="bottom" id="O1f-8H-X2t"/>
+                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="top" secondItem="DDE-Iw-2kF" secondAttribute="top" id="ouc-F7-yiN"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fuk-CE-9Dr">
                                 <rect key="frame" x="0.0" y="433.5" width="375" height="181.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="API-Y6-erM">
+                                        <rect key="frame" x="20" y="19" width="335" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cidade" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iU0-yV-C2U">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
+                                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="6qg-Cu-oek"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Estado" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8k-pf-oNH">
+                                                <rect key="frame" x="115.5" y="0.0" width="104" height="30"/>
+                                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="4rH-WV-htW"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="País" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ppg-GV-OWc">
+                                                <rect key="frame" x="231.5" y="0.0" width="103.5" height="30"/>
+                                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="SdB-f4-0L7"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="X6T-LN-i1K">
+                                        <rect key="frame" x="20" y="64" width="335" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Rua" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qj6-2S-ENf">
+                                                <rect key="frame" x="0.0" y="0.0" width="236.5" height="30"/>
+                                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="c11-w4-Vl7"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Número" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-ax-cEZ">
+                                                <rect key="frame" x="256.5" y="0.0" width="78.5" height="30"/>
+                                                <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="X0y-d0-vJG"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lnx-ax-cEZ" firstAttribute="width" secondItem="Qj6-2S-ENf" secondAttribute="width" multiplier="1:3" id="uCm-ax-xan"/>
+                                        </constraints>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Complemento" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ott-mA-BKW">
+                                        <rect key="frame" x="20" y="117" width="118" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="ckb-io-77m"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="X6T-LN-i1K" secondAttribute="trailing" constant="20" id="1Lx-KG-bgP"/>
+                                    <constraint firstItem="API-Y6-erM" firstAttribute="leading" secondItem="Fuk-CE-9Dr" secondAttribute="leading" constant="20" id="5NW-d6-Qtu"/>
+                                    <constraint firstAttribute="trailing" secondItem="API-Y6-erM" secondAttribute="trailing" constant="20" id="hWT-XV-Q9H"/>
+                                    <constraint firstItem="X6T-LN-i1K" firstAttribute="leading" secondItem="Fuk-CE-9Dr" secondAttribute="leading" constant="20" id="m9W-p2-sKW"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MY0-bQ-LaX">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
