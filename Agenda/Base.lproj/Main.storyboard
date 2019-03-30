@@ -155,7 +155,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="CHl-w6-i8t" secondAttribute="trailing" id="1Qc-PL-Tj7"/>
                                     <constraint firstItem="CHl-w6-i8t" firstAttribute="leading" secondItem="YxJ-i7-Zgh" secondAttribute="leading" id="3Zn-WP-i73"/>
@@ -171,7 +171,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaO-zL-ej2">
                                 <rect key="frame" x="0.0" y="330.5" width="375" height="293.5"/>
@@ -290,7 +290,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="si3-mA-ra6" firstAttribute="leading" secondItem="IaO-zL-ej2" secondAttribute="leading" id="7MV-So-fqA"/>
                                     <constraint firstAttribute="trailing" secondItem="si3-mA-ra6" secondAttribute="trailing" id="L83-Vz-Hm4"/>
@@ -300,7 +300,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btN-ex-gDb">
                                 <rect key="frame" x="0.0" y="626" width="375" height="39"/>
-                                <color key="backgroundColor" red="0.7929923608535222" green="1" blue="0.23943423679032139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -337,6 +337,7 @@
                         <outlet property="estadoLabel" destination="L10-8i-mPP" id="2en-Ls-8yg"/>
                         <outlet property="imagemContato" destination="js7-9Y-rK8" id="X07-8m-zLX"/>
                         <outlet property="nomeContatoLabel" destination="10c-jD-mwB" id="fWc-gI-TsR"/>
+                        <outlet property="numeroLabel" destination="s9g-tE-3Md" id="9ub-3C-3wB"/>
                         <outlet property="paisLabel" destination="TSB-1K-YuZ" id="Vjg-p7-31t"/>
                         <outlet property="ruaLabel" destination="2lJ-SW-elS" id="fME-FK-Dw5"/>
                         <outlet property="telefoneLabel" destination="Zbh-uU-6js" id="Jn7-WF-9wb"/>

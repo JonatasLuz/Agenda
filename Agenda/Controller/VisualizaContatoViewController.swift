@@ -14,6 +14,7 @@ class VisualizaContatoViewController: UIViewController {
     @IBOutlet weak var estadoLabel: UILabel!
     @IBOutlet weak var ruaLabel: UILabel!
     @IBOutlet weak var complementoLabel: UILabel!
+    @IBOutlet weak var numeroLabel: UILabel!
     
     @IBOutlet weak var editarButon: UIBarButtonItem!
     @IBOutlet weak var imagemContato: UIImageView!
@@ -48,6 +49,9 @@ class VisualizaContatoViewController: UIViewController {
         paisLabel.text = endereco.pais
         estadoLabel.text = endereco.estado
         cidadeLabel.text = endereco.cidade
+        ruaLabel.text = endereco.rua
+        numeroLabel.text = String(endereco.numero)
+        complementoLabel.text = endereco.complemento
         
         
     }
