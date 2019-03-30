@@ -22,6 +22,7 @@ class VisualizaContatoViewController: UIViewController {
     var pessoas : [Pessoa]!
     var telefones : [Fone]!
     var emails : [Email]!
+    var endereco : [Endereco]!
     var agenda : TableModelView!
     override func viewDidLoad() {
         super.viewDidLoad()

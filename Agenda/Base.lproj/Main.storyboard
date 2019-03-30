@@ -345,6 +345,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
+                                                            <action selector="cidadeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="K2Y-I3-M7t"/>
                                                             <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="6qg-Cu-oek"/>
                                                         </connections>
                                                     </textField>
@@ -354,6 +355,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
+                                                            <action selector="estadoAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="GLO-O8-xje"/>
                                                             <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="4rH-WV-htW"/>
                                                         </connections>
                                                     </textField>
@@ -364,6 +366,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="SdB-f4-0L7"/>
+                                                            <action selector="paisAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="u8S-hw-dQ6"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -378,6 +381,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="c11-w4-Vl7"/>
+                                                            <action selector="ruaAction:" destination="UaZ-rN-LeZ" eventType="editingDidEnd" id="6x2-25-4a5"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Número" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-ax-cEZ">
@@ -387,6 +391,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="X0y-d0-vJG"/>
+                                                            <action selector="numeroAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="lH8-1V-Ip2"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -400,6 +405,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="ComplementoAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="eGc-Rf-iA2"/>
                                                     <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="ckb-io-77m"/>
                                                 </connections>
                                             </textField>
@@ -454,14 +460,20 @@
                         <outlet property="adicionaImagemButton" destination="M7o-Ms-Xax" id="W3D-bv-Q5x"/>
                         <outlet property="cadastrarButton" destination="vzw-Wp-kaw" id="6YK-Mu-Aku"/>
                         <outlet property="cidadeStackView" destination="API-Y6-erM" id="wcg-hv-GWS"/>
+                        <outlet property="cidadeTextField" destination="iU0-yV-C2U" id="dUm-ov-A26"/>
                         <outlet property="complementoLabel" destination="ott-mA-BKW" id="Muk-x7-5et"/>
+                        <outlet property="complementoTextField" destination="ott-mA-BKW" id="VBg-vL-bDS"/>
                         <outlet property="dddTextField" destination="aNY-N4-mJF" id="wxa-e4-fBF"/>
                         <outlet property="ddiTextField" destination="WVH-04-Agi" id="eR0-CB-OWn"/>
                         <outlet property="emailTextField" destination="JAf-gl-GaE" id="PQ8-fS-NIi"/>
                         <outlet property="enderecoStackView" destination="leZ-Lp-w7f" id="Rhi-05-Y1p"/>
+                        <outlet property="estadoTextField" destination="h8k-pf-oNH" id="Eon-uz-jor"/>
                         <outlet property="nomeTextField" destination="hXY-h4-LVy" id="ABi-8b-LG3"/>
+                        <outlet property="numeroTextField" destination="lnx-ax-cEZ" id="CsK-T7-tH2"/>
+                        <outlet property="paisTextField" destination="Ppg-GV-OWc" id="ebr-HX-joC"/>
                         <outlet property="pessoaStackView" destination="QMF-86-Z1s" id="m2E-co-xUN"/>
                         <outlet property="ruaStackView" destination="X6T-LN-i1K" id="Eri-0t-GJy"/>
+                        <outlet property="ruaTextField" destination="Qj6-2S-ENf" id="e4e-Q0-mqZ"/>
                         <outlet property="telefoneStackView" destination="Lnl-NX-pux" id="d1J-pd-4oj"/>
                         <outlet property="telefoneTextField" destination="tyo-ff-Y9T" id="AnM-ih-MHX"/>
                         <outlet property="viewImagem" destination="DDE-Iw-2kF" id="LbR-8u-Kmk"/>

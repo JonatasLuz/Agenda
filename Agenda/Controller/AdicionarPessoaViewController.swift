@@ -28,6 +28,14 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     @IBOutlet weak var ddiTextField: UITextField!
     @IBOutlet weak var dddTextField: UITextField!
     @IBOutlet weak var telefoneTextField: UITextField!
+    
+    @IBOutlet weak var cidadeTextField: UITextField!
+    @IBOutlet weak var estadoTextField: UITextField!
+    @IBOutlet weak var paisTextField: UITextField!
+    @IBOutlet weak var ruaTextField: UITextField!
+    @IBOutlet weak var numeroTextField: UITextField!
+    @IBOutlet weak var complementoTextField: UITextField!
+    
 
     
     
@@ -53,8 +61,8 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
         }
         super.viewDidLoad()
         adicionaImagemButton.widthAnchor.constraint(equalTo: adicionaImagemButton.widthAnchor , multiplier: 1.0).isActive = true
-        adicionaImagemButton.centerXAnchor.constraint(equalToSystemSpacingAfter: viewImagem.centerXAnchor, multiplier: 1).isActive = true
-        adicionaImagemButton.centerYAnchor.constraint(equalToSystemSpacingBelow: viewImagem.centerYAnchor, multiplier: 1).isActive = true
+    adicionaImagemButton.centerXAnchor.constraint(equalToSystemSpacingAfter: viewImagem.centerXAnchor, multiplier: 1).isActive = true
+    adicionaImagemButton.centerYAnchor.constraint(equalToSystemSpacingBelow: viewImagem.centerYAnchor, multiplier: 1).isActive = true
         cidadeStackView.heightAnchor.constraint(equalTo: enderecoStackView.heightAnchor, multiplier: 0.23).isActive = true
         telefoneStackView.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
         nomeTextField.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
@@ -111,6 +119,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             pessoa.nome = nomeTextField.text
             agenda.updateEmail(pessoa, emailTextField.text!)
             agenda.updatePessoa(pessoaAntiga!, pessoa, (adicionaImagemButton.imageView?.image)!)
+            agenda.cadastraEndereco(paisTextField.text!, estadoTextField.text!, cidadeTextField.text!, ruaTextField.text!, Int(numeroTextField.text!)!, complementoTextField.text!, pessoa)
             
         }else{
             let imagem = adicionaImagemButton.image(for: [])
@@ -161,10 +170,23 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
         }
     }
     
+    @IBAction func cidadeAction(_ sender: UITextField) {
+    }
+    @IBAction func estadoAction(_ sender: UITextField) {
+    }
+    @IBAction func paisAction(_ sender: UITextField) {
+    }
+    @IBAction func ruaAction(_ sender: UITextField) {
+    }
+    @IBAction func numeroAction(_ sender: UITextField) {
+    }
+    
+    @IBAction func ComplementoAction(_ sender: UITextField) {
+    }
     
     func verificaTextField(_ conteudoTexField : String)-> Bool{
         
-        let conteudosPadrao = ["DDD", "DDI","Telefone","Nome","Email"]
+        let conteudosPadrao = ["DDD", "DDI","Telefone","Nome","Email","Rua","Número", "Complemento", "Estado","Cidade","País"]
         var verificaConteudo : Bool = false
         for conteudo in conteudosPadrao{
             if conteudoTexField == conteudo{

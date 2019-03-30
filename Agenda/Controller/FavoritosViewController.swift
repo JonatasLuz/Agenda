@@ -12,7 +12,6 @@ import UIKit
 class FavoritosViewController: UICollectionViewController {
     private let reuseIdentifier = "ContatoCell"
     @IBOutlet weak var voltarMenu: UIBarButtonItem!
-    
     var pessoas : [Pessoa]!
     var agenda: TableModelView!
     override func viewDidLoad() {
@@ -56,8 +55,6 @@ class FavoritosViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let linha = indexPath.row
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ContatoViewCell
-        let toque = UITapGestureRecognizer(target: self, action: #selector(FavoritosViewController.tocarContato))
-        cell.contatoImagemView.addGestureRecognizer(toque)
         cell.contatoImagemView.image = agenda.getImagem(pessoas[linha].imagemContato!)
         cell.nomeLabel.text = pessoas[linha].nome
         return cell
@@ -71,13 +68,15 @@ class FavoritosViewController: UICollectionViewController {
         return headerView
     }
     
-    
-    @objc func tocarContato()
-    {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let visualizaContato = storyBoard.instantiateViewController(withIdentifier: "visualizaContato") as! VisualizaContatoViewController
+        visualizaContato.celula = indexPath.row
         self.present(visualizaContato, animated: true, completion: nil)
     }
+
+    
+    
 
     // MARK: UICollectionViewDelegate
 

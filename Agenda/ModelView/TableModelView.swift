@@ -248,7 +248,7 @@ class TableModelView{
         return endereco[0]
     }
     
-    func deletaFone(_ endereco : Endereco ){
+    func deletaEndereco(_ endereco : Endereco ){
         let enderecoDeletado = endereco as NSManagedObject
             contexto.delete(enderecoDeletado)
         do{
