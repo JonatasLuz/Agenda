@@ -10,7 +10,13 @@ import UIKit
 
 class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var pessoaStackView: UIStackView!
+    @IBOutlet weak var cidadeStackView: UIStackView!
+    @IBOutlet weak var ruaStackView: UIStackView!
     
+    @IBOutlet weak var telefoneStackView: UIStackView!
+    @IBOutlet weak var complementoLabel: UITextField!
+    @IBOutlet weak var enderecoStackView: UIStackView!
     @IBOutlet weak var viewImagem: UIView!
     
     @IBOutlet weak var adicionaImagemButton: UIButton!
@@ -49,7 +55,12 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
         adicionaImagemButton.widthAnchor.constraint(equalTo: adicionaImagemButton.widthAnchor , multiplier: 1.0).isActive = true
         adicionaImagemButton.centerXAnchor.constraint(equalToSystemSpacingAfter: viewImagem.centerXAnchor, multiplier: 1).isActive = true
         adicionaImagemButton.centerYAnchor.constraint(equalToSystemSpacingBelow: viewImagem.centerYAnchor, multiplier: 1).isActive = true
-
+        cidadeStackView.heightAnchor.constraint(equalTo: enderecoStackView.heightAnchor, multiplier: 0.23).isActive = true
+        telefoneStackView.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
+        nomeTextField.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
+        emailTextField.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
+        
+        
     }
     
     func retornaMenu(){
