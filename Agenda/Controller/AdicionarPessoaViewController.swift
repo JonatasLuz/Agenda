@@ -70,6 +70,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
         print(adicionaImagemButton.heightAnchor)
         
         
+        
     }
     
     func retornaMenu(){
