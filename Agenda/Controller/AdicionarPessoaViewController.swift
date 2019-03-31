@@ -125,9 +125,17 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             telefones[0].ddd = Int64(dddTextField.text!)!
             telefones[0].telefone = telefoneTextField.text
             emails[0].email = emailTextField.text
+            endereco.pais = paisTextField.text
+            endereco.estado = estadoTextField.text
+            endereco.cidade = cidadeTextField.text
+            endereco.rua = ruaTextField.text
+            endereco.numero = Int64(numeroTextField.text!)!
+            endereco.complemento = complementoTextField.text
+            
             agenda.updateFone(pessoa, telefones[0])
             pessoa.nome = nomeTextField.text
             agenda.updateEmail(pessoa, emailTextField.text!)
+            agenda.updateEndereco(pessoa, endereco)
             agenda.updatePessoa(pessoaAntiga!, pessoa, (adicionaImagemButton.imageView?.image)!)
             agenda.cadastraEndereco(paisTextField.text!, estadoTextField.text!, cidadeTextField.text!, ruaTextField.text!, Int(numeroTextField.text!)!, complementoTextField.text!, pessoa)
             

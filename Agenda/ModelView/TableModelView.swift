@@ -248,7 +248,26 @@ class TableModelView{
         return endereco.first!
     }
     
-    func deletaFone(_ endereco : Endereco ){
+    func updateEndereco(_ pessoa: Pessoa, _ novoEndereco: Endereco){
+        let requisicao : NSFetchRequest<Endereco> = Endereco.fetchRequest()
+        requisicao.predicate = NSPredicate(format: "pessoa = %@", pessoa)
+        var endereco : [Endereco]!
+        do{
+            try endereco = contexto.fetch(requisicao)
+        }catch{
+            print("Erro na atualizacao do email: \(error)")
+        }
+        if endereco.count != 0{
+            endereco.first?.setValue(novoEndereco.pais, forKey: "pais")
+            endereco.first?.setValue(novoEndereco.estado, forKey: "estado")
+            endereco.first?.setValue(novoEndereco.cidade, forKey: "cidade")
+            endereco.first?.setValue(novoEndereco.rua, forKey: "rua")
+            endereco.first?.setValue(novoEndereco.numero, forKey: "numero")
+            endereco.first?.setValue(novoEndereco.complemento, forKey: "complemento")
+        }
+    }
+    
+    func deletaEndereco(_ endereco : Endereco ){
         let enderecoDeletado = endereco as NSManagedObject
             contexto.delete(enderecoDeletado)
         do{
@@ -257,6 +276,7 @@ class TableModelView{
             print("Erro para deletar endereço \(error)")
         }
     }
+    
 
     
     init(){

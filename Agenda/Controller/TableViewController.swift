@@ -81,10 +81,12 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             telefones = agenda.getFone(pessoas[indexPath.row])
+            let endereco = agenda.getEndereco(pessoas[indexPath.row])
             agenda.deletaFone(telefones)
             emails = agenda.getEmail(pessoas[indexPath.row])
             agenda.deletaEmail(emails)
             agenda.deletaPessoa(pessoas[indexPath.row])
+            agenda.deletaEndereco(endereco)
             pessoas.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
