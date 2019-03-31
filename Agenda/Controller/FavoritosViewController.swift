@@ -18,6 +18,7 @@ class FavoritosViewController: UICollectionViewController {
     override func viewDidLoad() {
         agenda = TableModelView()
         pessoas = agenda.getFavoritos()
+        
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -27,6 +28,16 @@ class FavoritosViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if pessoas.isEmpty{
+            let alert = UIAlertController(title: "Agenda", message: """
+            Você não possui nenhum favorito cadastrado.
+            """, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     /*

@@ -69,6 +69,24 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             complementoTextField.text = endereco.complemento
             adicionaImagemButton.setImage(agenda.getImagem(pessoa.imagemContato!), for: [])
         }
+        var textFields : [(UITextField, String)] = []
+        textFields.append((nomeTextField , "Nome"))
+        textFields.append((emailTextField, "Email"))
+        textFields.append((dddTextField, "DDD"))
+        textFields.append((ddiTextField, "DDI"))
+        textFields.append((cidadeTextField, "Cidade"))
+        textFields.append((estadoTextField, "Estado"))
+        textFields.append((paisTextField, "País"))
+        textFields.append((ruaTextField, "Rua"))
+        textFields.append((numeroTextField,"Número"))
+        textFields.append((complementoLabel,"Complemento"))
+        for textField in textFields{
+            if textField.0.text == ""{
+                textField.0.text = textField.1
+            }
+        }
+        
+        
         super.viewDidLoad()
         adicionaImagemButton.widthAnchor.constraint(equalTo: adicionaImagemButton.widthAnchor , multiplier: 1.0).isActive = true
     adicionaImagemButton.centerXAnchor.constraint(equalTo: viewImagem.centerXAnchor).isActive = true
@@ -108,7 +126,6 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             imagemSelectionada = imagemEditada
             adicionaImagemButton.setImage(imagemSelectionada, for: [])
             picker.dismiss(animated: true, completion: nil)
-            print("entro")
         }
     }
 
@@ -124,38 +141,50 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     }
     
     @IBAction func cadastrarAction(_ sender: UIButton) {
-        if editor == true{
-            let pessoaAntiga = pessoa
-            telefones[0].ddi = Int64(ddiTextField.text!)!
-            telefones[0].ddd = Int64(dddTextField.text!)!
-            telefones[0].telefone = telefoneTextField.text
-            emails[0].email = emailTextField.text
-            endereco.pais = paisTextField.text
-            endereco.estado = estadoTextField.text
-            endereco.cidade = cidadeTextField.text
-            endereco.rua = ruaTextField.text
-            endereco.numero = Int64(numeroTextField.text!)!
-            endereco.complemento = complementoTextField.text
-            agenda.updateFone(pessoa, telefones[0])
-            pessoa.nome = nomeTextField.text
-            pessoa.favorito = favoritoSwitch.isOn
-            agenda.updateEmail(pessoa, emailTextField.text!)
-            agenda.updateEndereco(pessoa, endereco)
-            agenda.updatePessoa(pessoaAntiga!, pessoa, (adicionaImagemButton.imageView?.image)!)
-            agenda.cadastraEndereco(paisTextField.text!, estadoTextField.text!, cidadeTextField.text!, ruaTextField.text!, Int(numeroTextField.text!)!, complementoTextField.text!, pessoa)
-            
+        let dddNumber = Int(dddTextField.text ?? "ddd")
+        let ddiNumber = Int(ddiTextField.text ?? "ddi")
+        let telefone = Int(telefoneTextField.text ?? "telefone")
+        let numeroEndereco = Int(numeroTextField.text ?? "numero")
+        if dddNumber != nil && ddiNumber != nil && telefone != nil && numeroEndereco != nil{
+            if editor == true{
+                let pessoaAntiga = pessoa
+                telefones[0].ddi = Int64(ddiTextField.text!)!
+                telefones[0].ddd = Int64(dddTextField.text!)!
+                telefones[0].telefone = telefoneTextField.text
+                emails[0].email = emailTextField.text
+                endereco.pais = paisTextField.text
+                endereco.estado = estadoTextField.text
+                endereco.cidade = cidadeTextField.text
+                endereco.rua = ruaTextField.text
+                endereco.numero = Int64(numeroTextField.text!)!
+                endereco.complemento = complementoTextField.text
+                agenda.updateFone(pessoa, telefones[0])
+                pessoa.nome = nomeTextField.text
+                pessoa.favorito = favoritoSwitch.isOn
+                agenda.updateEmail(pessoa, emailTextField.text!)
+                agenda.updateEndereco(pessoa, endereco)
+                agenda.updatePessoa(pessoaAntiga!, pessoa, (adicionaImagemButton.imageView?.image)!)
+                agenda.cadastraEndereco(paisTextField.text!, estadoTextField.text!, cidadeTextField.text!, ruaTextField.text!, Int(numeroTextField.text!)!, complementoTextField.text!, pessoa)
+                
+            }else{
+                let imagem = adicionaImagemButton.image(for: [])
+                pessoa = agenda.cadastraPessoa(nomeTextField.text!, imagem!, favoritoSwitch.isOn)
+                agenda.cadastraEmail(emailTextField.text!, pessoa)
+                agenda.cadastraFone(Int(ddiTextField.text!)!, Int(dddTextField.text!)!, telefoneTextField.text!, pessoa)
+                agenda.cadastraEndereco(paisTextField.text!, estadoTextField.text!, cidadeTextField.text!, ruaTextField.text!, Int(numeroTextField.text!)!, complementoTextField.text!, pessoa)
+            }
+            let alerta = UIAlertController(title: "Agenda", message: "Contato cadastrado com sucesso", preferredStyle: .alert)
+            alerta.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {
+                _ in self.retornaMenu()
+            }))
+            self.present(alerta, animated: true, completion: nil)
         }else{
-            let imagem = adicionaImagemButton.image(for: [])
-            pessoa = agenda.cadastraPessoa(nomeTextField.text!, imagem!, favoritoSwitch.isOn)
-            agenda.cadastraEmail(emailTextField.text!, pessoa)
-            agenda.cadastraFone(Int(ddiTextField.text!)!, Int(dddTextField.text!)!, telefoneTextField.text!, pessoa)
-            agenda.cadastraEndereco(paisTextField.text!, estadoTextField.text!, cidadeTextField.text!, ruaTextField.text!, Int(numeroTextField.text!)!, complementoTextField.text!, pessoa)
+            let alerta = UIAlertController(title: "Agenda", message: "Valores Incorretos", preferredStyle: .alert)
+            alerta.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {
+                _ in
+            }))
+            self.present(alerta, animated: true, completion: nil)
         }
-        let alerta = UIAlertController(title: "Agenda", message: "Contato cadastrado com sucesso", preferredStyle: .alert)
-        alerta.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {
-            _ in self.retornaMenu()
-        }))
-        self.present(alerta, animated: true, completion: nil)
     }
     
     @IBAction func nomeAction(_ sender: UITextField) {
