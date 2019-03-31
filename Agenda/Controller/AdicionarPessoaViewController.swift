@@ -45,29 +45,36 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     var pessoas : [Pessoa]!
     var telefones : [Fone]!
     var emails : [Email]!
+    var endereco : Endereco!
     var editor : Bool = false
     
     override func viewDidLoad() {
         if pessoa != nil{
             telefones = agenda.getFone(pessoa)
             emails = agenda.getEmail(pessoa)
+            endereco = agenda.getEndereco(pessoa)
             nomeTextField.text = pessoa.nome
             emailTextField.text = emails.first?.email
             ddiTextField.text = String(telefones.first!.ddi)
             dddTextField.text = String(telefones.first!.ddd)
             telefoneTextField.text = telefones.first!.telefone
+            paisTextField.text = endereco.pais
+            estadoTextField.text = endereco.estado
+            cidadeTextField.text = endereco.cidade
+            ruaTextField.text = endereco.rua
+            numeroTextField.text = String(endereco.numero)
+            complementoTextField.text = endereco.complemento
             adicionaImagemButton.setImage(agenda.getImagem(pessoa.imagemContato!), for: [])
             cadastrarButton.title = "Salvar"
         }
         super.viewDidLoad()
         adicionaImagemButton.widthAnchor.constraint(equalTo: adicionaImagemButton.widthAnchor , multiplier: 1.0).isActive = true
-    adicionaImagemButton.centerXAnchor.constraint(equalToSystemSpacingAfter: viewImagem.centerXAnchor, multiplier: 1).isActive = true
-    adicionaImagemButton.centerYAnchor.constraint(equalToSystemSpacingBelow: viewImagem.centerYAnchor, multiplier: 1).isActive = true
+    adicionaImagemButton.centerXAnchor.constraint(equalTo: viewImagem.centerXAnchor).isActive = true
+    adicionaImagemButton.centerYAnchor.constraint(equalTo: viewImagem.centerYAnchor).isActive = true
         cidadeStackView.heightAnchor.constraint(equalTo: enderecoStackView.heightAnchor, multiplier: 0.23).isActive = true
         telefoneStackView.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
         nomeTextField.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
         emailTextField.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
-        print(adicionaImagemButton.heightAnchor)
         
         
         

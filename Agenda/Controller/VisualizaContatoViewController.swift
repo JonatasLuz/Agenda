@@ -16,6 +16,8 @@ class VisualizaContatoViewController: UIViewController {
     @IBOutlet weak var complementoLabel: UILabel!
     @IBOutlet weak var numeroLabel: UILabel!
     
+    @IBOutlet weak var viewImagemContato: UIView!
+    @IBOutlet weak var imagemView: UIImageView!
     @IBOutlet weak var editarButon: UIBarButtonItem!
     @IBOutlet weak var imagemContato: UIImageView!
     @IBOutlet weak var ddiLabel: UILabel!
@@ -52,7 +54,9 @@ class VisualizaContatoViewController: UIViewController {
         ruaLabel.text = endereco.rua
         numeroLabel.text = String(endereco.numero)
         complementoLabel.text = endereco.complemento
-        
+        imagemView.widthAnchor.constraint(equalTo: imagemView.heightAnchor, multiplier: 1).isActive = true
+        imagemView.centerYAnchor.constraint(equalTo: viewImagemContato.centerYAnchor).isActive = true
+        imagemView.centerXAnchor.constraint(equalTo: viewImagemContato.centerXAnchor).isActive = true
         
     }
     

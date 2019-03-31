@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="0V4-es-gri">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="83" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Agenda" id="QSv-rW-9sc">
@@ -166,12 +166,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIr-FV-hxp">
                                 <rect key="frame" x="0.0" y="66" width="375" height="195.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="js7-9Y-rK8">
-                                        <rect key="frame" x="55" y="32" width="265" height="149"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="js7-9Y-rK8">
+                                        <rect key="frame" x="55" y="2" width="265" height="191.5"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="js7-9Y-rK8" firstAttribute="top" secondItem="KIr-FV-hxp" secondAttribute="top" constant="2" id="a2A-hT-nLZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="js7-9Y-rK8" secondAttribute="bottom" constant="2" id="rxj-rA-ktm"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaO-zL-ej2">
                                 <rect key="frame" x="0.0" y="330.5" width="375" height="293.5"/>
@@ -336,11 +339,13 @@
                         <outlet property="emailLabel" destination="ZjN-cd-dem" id="wBJ-L7-dXr"/>
                         <outlet property="estadoLabel" destination="L10-8i-mPP" id="2en-Ls-8yg"/>
                         <outlet property="imagemContato" destination="js7-9Y-rK8" id="X07-8m-zLX"/>
+                        <outlet property="imagemView" destination="js7-9Y-rK8" id="mJg-zv-3Uq"/>
                         <outlet property="nomeContatoLabel" destination="10c-jD-mwB" id="fWc-gI-TsR"/>
                         <outlet property="numeroLabel" destination="s9g-tE-3Md" id="9ub-3C-3wB"/>
                         <outlet property="paisLabel" destination="TSB-1K-YuZ" id="Vjg-p7-31t"/>
                         <outlet property="ruaLabel" destination="2lJ-SW-elS" id="fME-FK-Dw5"/>
                         <outlet property="telefoneLabel" destination="Zbh-uU-6js" id="Jn7-WF-9wb"/>
+                        <outlet property="viewImagemContato" destination="KIr-FV-hxp" id="zQF-1w-Z3F"/>
                         <outlet property="voltarButton" destination="VJN-6I-Jg9" id="frr-mw-Xlo"/>
                     </connections>
                 </viewController>
@@ -450,8 +455,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDE-Iw-2kF">
                                 <rect key="frame" x="0.0" y="66" width="375" height="186"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="top" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-Ms-Xax">
-                                        <rect key="frame" x="99" y="0.0" width="176" height="186"/>
+                                    <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-Ms-Xax">
+                                        <rect key="frame" x="99" y="0.0" width="177" height="186"/>
                                         <state key="normal" image="contato">
                                             <color key="titleShadowColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -462,6 +467,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="centerX" secondItem="DDE-Iw-2kF" secondAttribute="centerX" id="32u-I0-gSG"/>
+                                    <constraint firstItem="M7o-Ms-Xax" firstAttribute="leading" secondItem="DDE-Iw-2kF" secondAttribute="leading" constant="99" id="ADa-xR-iVS"/>
                                     <constraint firstAttribute="bottom" secondItem="M7o-Ms-Xax" secondAttribute="bottom" id="O1f-8H-X2t"/>
                                     <constraint firstItem="M7o-Ms-Xax" firstAttribute="top" secondItem="DDE-Iw-2kF" secondAttribute="top" id="ouc-F7-yiN"/>
                                 </constraints>
