@@ -23,7 +23,7 @@ class TableModelView{
     
     func cadastraPessoa(_ nome: String, _ imagem: UIImage, _ favorito : Bool) -> Pessoa{
         let pessoaCadastro = Pessoa(context: contexto)
-        pessoas = getPessoas()
+        
         var imagemUrl : URL
         let qtdPessoas = pessoas.count
         let subNome = nome.split(separator: " ")
@@ -38,7 +38,6 @@ class TableModelView{
         pessoaCadastro.favorito = favorito
         do{
             try contexto.save()
-            
         }catch{
             print("Erro no cadastro de pessoa: \(error)")
         }
@@ -52,6 +51,12 @@ class TableModelView{
         }catch{
             print("Erro na leitura de contato: \(error)")
         }
+        
+        if(pessoas.isEmpty == false){
+            pessoas = pessoas.sorted(by: {
+                $0.nome!.lowercased() <   $1.nome!.lowercased()
+            })
+        }
         return pessoas
     }
     
@@ -63,11 +68,22 @@ class TableModelView{
         }catch{
             print("Erro na leitura de contato: \(error)")
         }
+        pessoas = pessoas.sorted(by: {$0.nome!.lowercased() <   $1.nome!.lowercased()})
         return pessoas
     }
     
     func deletaPessoa(_ pessoa : Pessoa){
+        var file = FileManager.default
         let pessoaDeletada = pessoa as NSManagedObject
+        var documentsUrl: URL {
+            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        }
+        let fileURL = documentsUrl.appendingPathComponent(pessoa.imagemContato! + ".png")
+        do{
+            try file.removeItem(at: fileURL)
+        }catch{
+            print("Erro: \(error)")
+        }
         contexto.delete(pessoaDeletada)
         do{
             try contexto.save()
@@ -78,12 +94,22 @@ class TableModelView{
     
     func updatePessoa(_ pessoaAntiga : Pessoa, _ pessoaNova : Pessoa, _ novaImagem : UIImage){
         var imagemUrl : URL
+        var file = FileManager.default
         let qtdPessoas = pessoas.count
         let subNome = pessoaNova.nome!.split(separator: " ")
         let nomeArquivo : String = String(subNome.last!) + String(subNome.first!) + String(qtdPessoas)
         if let data = novaImagem.pngData() {
             imagemUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(nomeArquivo).png")
             try? data.write(to: imagemUrl)
+        }
+        var documentsUrl: URL {
+            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        }
+        let fileURL = documentsUrl.appendingPathComponent(pessoaAntiga.imagemContato! + ".png")
+        do{
+            try file.removeItem(at: fileURL)
+        }catch{
+            print("Erro: \(error)")
         }
         
         let requisicao : NSFetchRequest<Pessoa> = Pessoa.fetchRequest()
