@@ -195,17 +195,47 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     }
     
     @IBAction func cidadeAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
     }
     @IBAction func estadoAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
     }
     @IBAction func paisAction(_ sender: UITextField) {
-    }
-    @IBAction func ruaAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
     }
     @IBAction func numeroAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
     }
     
+  
+    @IBAction func ruaAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
+        
+    }
+    
+    
+    
     @IBAction func ComplementoAction(_ sender: UITextField) {
+        if verificaTextField(sender.text!) == true{
+            sender.text = ""
+            sender.textColor = UIColor.black
+        }
+        
     }
     
     func verificaTextField(_ conteudoTexField : String)-> Bool{

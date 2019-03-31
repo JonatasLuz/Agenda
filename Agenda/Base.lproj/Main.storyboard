@@ -511,7 +511,6 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="cidadeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="K2Y-I3-M7t"/>
-                                                            <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="6qg-Cu-oek"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Estado" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8k-pf-oNH">
@@ -545,8 +544,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="c11-w4-Vl7"/>
-                                                            <action selector="ruaAction:" destination="UaZ-rN-LeZ" eventType="editingDidEnd" id="6x2-25-4a5"/>
+                                                            <action selector="ruaAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="ZAw-WQ-94C"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Número" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-ax-cEZ">
@@ -555,7 +553,6 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="X0y-d0-vJG"/>
                                                             <action selector="numeroAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="lH8-1V-Ip2"/>
                                                         </connections>
                                                     </textField>
@@ -571,7 +568,6 @@
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="ComplementoAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="eGc-Rf-iA2"/>
-                                                    <action selector="nomeAction:" destination="UaZ-rN-LeZ" eventType="touchDown" id="ckb-io-77m"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -730,7 +726,7 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" restorationIdentifier="Header" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Header" id="vDy-vT-QRB" customClass="FavoritosHeaderController" customModule="Agenda" customModuleProvider="target">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Header" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Header" id="vDy-vT-QRB" customClass="FavoritosHeaderController" customModule="Agenda" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
