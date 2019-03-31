@@ -634,6 +634,7 @@
                         <outlet property="enderecoStackView" destination="leZ-Lp-w7f" id="Rhi-05-Y1p"/>
                         <outlet property="estadoTextField" destination="h8k-pf-oNH" id="Eon-uz-jor"/>
                         <outlet property="favoritoSwitch" destination="ZO1-x4-4wu" id="IoB-cg-vGG"/>
+                        <outlet property="navigationBarTitle" destination="rLZ-LQ-xC4" id="1EY-lw-n7M"/>
                         <outlet property="nomeTextField" destination="hXY-h4-LVy" id="ABi-8b-LG3"/>
                         <outlet property="numeroTextField" destination="lnx-ax-cEZ" id="CsK-T7-tH2"/>
                         <outlet property="paisTextField" destination="Ppg-GV-OWc" id="ebr-HX-joC"/>

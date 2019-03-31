@@ -73,6 +73,7 @@ class FavoritosViewController: UICollectionViewController {
         let visualizaContato = storyBoard.instantiateViewController(withIdentifier: "visualizaContato") as! VisualizaContatoViewController
         visualizaContato.celula = indexPath.row
         visualizaContato.favoritoFlag = true
+        
         self.present(visualizaContato, animated: true, completion: nil)
     }
 

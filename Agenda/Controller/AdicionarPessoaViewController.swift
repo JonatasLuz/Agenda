@@ -9,6 +9,7 @@
 import UIKit
 
 class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var navigationBarTitle: UINavigationItem!
     
     @IBOutlet weak var pessoaStackView: UIStackView!
     @IBOutlet weak var cidadeStackView: UIStackView!
@@ -76,6 +77,9 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
         telefoneStackView.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
         nomeTextField.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
         emailTextField.heightAnchor.constraint(equalTo: pessoaStackView.heightAnchor, multiplier: 0.23).isActive = true
+        if editor == true{
+            navigationBarTitle.title = "Editor de Contato"
+        }
         
         
         
