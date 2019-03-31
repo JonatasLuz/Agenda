@@ -14,9 +14,10 @@ class FavoritosViewController: UICollectionViewController {
     @IBOutlet weak var voltarMenu: UIBarButtonItem!
     var pessoas : [Pessoa]!
     var agenda: TableModelView!
+    
     override func viewDidLoad() {
         agenda = TableModelView()
-        pessoas = agenda.getPessoas()
+        pessoas = agenda.getFavoritos()
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -27,7 +28,6 @@ class FavoritosViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
-
     
     /*
     // MARK: - Navigation
@@ -72,6 +72,7 @@ class FavoritosViewController: UICollectionViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let visualizaContato = storyBoard.instantiateViewController(withIdentifier: "visualizaContato") as! VisualizaContatoViewController
         visualizaContato.celula = indexPath.row
+        visualizaContato.favoritoFlag = true
         self.present(visualizaContato, animated: true, completion: nil)
     }
 

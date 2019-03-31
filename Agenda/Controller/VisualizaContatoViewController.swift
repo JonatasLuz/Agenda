@@ -32,11 +32,16 @@ class VisualizaContatoViewController: UIViewController {
     var emails : [Email]!
     var endereco : Endereco!
     var agenda : TableModelView!
+    var favoritoFlag : Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         agenda = TableModelView()
-        pessoas = agenda.getPessoas()
+        if favoritoFlag == true{
+            pessoas = agenda.getFavoritos()
+        }else{
+            pessoas = agenda.getPessoas()
+        }
         telefones = agenda.getFone(pessoas[celula])
         emails = agenda.getEmail(pessoas[celula])
         endereco = agenda.getEndereco(pessoas[celula])

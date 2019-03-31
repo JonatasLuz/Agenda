@@ -55,6 +55,17 @@ class TableModelView{
         return pessoas
     }
     
+    func getFavoritos() -> [Pessoa]{
+        let requisicao : NSFetchRequest<Pessoa> = Pessoa.fetchRequest()
+        requisicao.predicate = NSPredicate(format: "favorito == true")
+        do{
+            try pessoas =  contexto.fetch(requisicao)
+        }catch{
+            print("Erro na leitura de contato: \(error)")
+        }
+        return pessoas
+    }
+    
     func deletaPessoa(_ pessoa : Pessoa){
         let pessoaDeletada = pessoa as NSManagedObject
         contexto.delete(pessoaDeletada)
