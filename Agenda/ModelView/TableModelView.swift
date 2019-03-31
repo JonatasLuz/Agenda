@@ -21,7 +21,7 @@ class TableModelView{
     
     
     
-    func cadastraPessoa(_ nome: String, _ imagem: UIImage) -> Pessoa{
+    func cadastraPessoa(_ nome: String, _ imagem: UIImage, _ favorito : Bool) -> Pessoa{
         let pessoaCadastro = Pessoa(context: contexto)
         pessoas = getPessoas()
         var imagemUrl : URL
@@ -35,6 +35,7 @@ class TableModelView{
             pessoaCadastro.imagemContato = nomeArquivo
         }
         pessoaCadastro.nome = nome
+        pessoaCadastro.favorito = favorito
         do{
             try contexto.save()
             
@@ -64,7 +65,7 @@ class TableModelView{
         }
     }
     
-    func updatePessoa(_ pessoaAntiga : Pessoa, _ pessoaNova : Pessoa , _ novaImagem: UIImage){
+    func updatePessoa(_ pessoaAntiga : Pessoa, _ pessoaNova : Pessoa, _ novaImagem : UIImage){
         var imagemUrl : URL
         let qtdPessoas = pessoas.count
         let subNome = pessoaNova.nome!.split(separator: " ")
@@ -83,7 +84,8 @@ class TableModelView{
         }
         if pessoas.count > 0{
             pessoas[0].setValue(pessoaNova.nome, forKey: "nome")
-            pessoas[0].setValue(nomeArquivo, forKey: "imagemContato")
+            pessoas.first?.setValue(nomeArquivo, forKey: "imagemContato")
+            pessoas.first?.setValue(pessoaNova.favorito, forKey: "favorito")
         }
     }
     

@@ -14,6 +14,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
     @IBOutlet weak var cidadeStackView: UIStackView!
     @IBOutlet weak var ruaStackView: UIStackView!   
     
+    @IBOutlet weak var favoritoSwitch: UISwitch!
     @IBOutlet weak var telefoneStackView: UIStackView!
     @IBOutlet weak var complementoLabel: UITextField!
     @IBOutlet weak var enderecoStackView: UIStackView!
@@ -54,6 +55,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             emails = agenda.getEmail(pessoa)
             endereco = agenda.getEndereco(pessoa)
             nomeTextField.text = pessoa.nome
+            favoritoSwitch.isOn = pessoa.favorito
             emailTextField.text = emails.first?.email
             ddiTextField.text = String(telefones.first!.ddi)
             dddTextField.text = String(telefones.first!.ddd)
@@ -65,7 +67,6 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             numeroTextField.text = String(endereco.numero)
             complementoTextField.text = endereco.complemento
             adicionaImagemButton.setImage(agenda.getImagem(pessoa.imagemContato!), for: [])
-            cadastrarButton.title = "Salvar"
         }
         super.viewDidLoad()
         adicionaImagemButton.widthAnchor.constraint(equalTo: adicionaImagemButton.widthAnchor , multiplier: 1.0).isActive = true
@@ -131,9 +132,9 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             endereco.rua = ruaTextField.text
             endereco.numero = Int64(numeroTextField.text!)!
             endereco.complemento = complementoTextField.text
-            
             agenda.updateFone(pessoa, telefones[0])
             pessoa.nome = nomeTextField.text
+            pessoa.favorito = favoritoSwitch.isOn
             agenda.updateEmail(pessoa, emailTextField.text!)
             agenda.updateEndereco(pessoa, endereco)
             agenda.updatePessoa(pessoaAntiga!, pessoa, (adicionaImagemButton.imageView?.image)!)
@@ -141,7 +142,7 @@ class AdicionarPessoaViewController: UIViewController , UIImagePickerControllerD
             
         }else{
             let imagem = adicionaImagemButton.image(for: [])
-            pessoa = agenda.cadastraPessoa(nomeTextField.text!, imagem!)
+            pessoa = agenda.cadastraPessoa(nomeTextField.text!, imagem!, favoritoSwitch.isOn)
             agenda.cadastraEmail(emailTextField.text!, pessoa)
             agenda.cadastraFone(Int(ddiTextField.text!)!, Int(dddTextField.text!)!, telefoneTextField.text!, pessoa)
             agenda.cadastraEndereco(paisTextField.text!, estadoTextField.text!, cidadeTextField.text!, ruaTextField.text!, Int(numeroTextField.text!)!, complementoTextField.text!, pessoa)
